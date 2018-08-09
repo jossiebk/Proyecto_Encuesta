@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('/teacher_form','Teacher_Form@index');
+Route::get('/teacher_form','TeacherController@index');
