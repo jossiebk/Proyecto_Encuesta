@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('home');
 });
 
+<<<<<<< HEAD
 Route::get('/dash', function () {
     return view('dashboard');
 });
+=======
+
+Route::get('/teacher_form','TeacherController@index');
+>>>>>>> aa69fbf89fe845bd2ae3a9ef05165b477e8aa756

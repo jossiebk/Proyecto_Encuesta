@@ -17,6 +17,7 @@ class CreateAssistantsTable extends Migration
             $table->increments('id');
             $table->date('birthdate');
             $table->string('image');
+            $table->integer('credits');
             $table->text('personal_description');
             $table->string('academic_experience_1');
             $table->string('academic_experience_2')->nullable();
