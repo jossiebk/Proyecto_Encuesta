@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('home');
 });
+
+
+Route::get('/teacher_form','Teacher_Form@index');
