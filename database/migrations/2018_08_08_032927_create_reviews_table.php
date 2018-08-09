@@ -20,7 +20,7 @@ class CreateReviewsTable extends Migration
             $table->integer('presentation');
             $table->integer('notes');
             $table->integer('assistance');
-            $table->integer('comment');
+            $table->string('comment');
             //Referencia a quien evalua
             $table->unsignedInteger('id_user_evaluator');
             $table->foreign('id_user_evaluator')->references('id')->on('users');

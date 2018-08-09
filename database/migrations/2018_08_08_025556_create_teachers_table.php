@@ -22,8 +22,8 @@ class CreateTeachersTable extends Migration
             $table->string('academic_title_2')->nullable();
             $table->string('academic_title_3')->nullable();
             $table->string('work_experience_1');
-            $table->string('work_experience_2')->nulable();
-            $table->string('work_experience_3')->nulable();
+            $table->string('work_experience_2')->nullable();
+            $table->string('work_experience_3')->nullable();
             $table->text('references')->nullable();
             //Llave foranea
             $table->unsignedInteger('id_user');

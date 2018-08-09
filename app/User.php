@@ -29,12 +29,12 @@ class User extends Authenticatable
 
     //$user->teacher
     public function teacher(){
-        return $this->hasOne(Teacher::class);
+        return $this->hasOne(Teacher::class, 'id_user');
     }
 
     //$user->assistant
     public function assistant(){
-        return $this->hasOne(Assisant::class);
+        return $this->hasOne(Assisant::class, 'id_user');
     }
 
     //$user->reviews (Encuestas que el usuario ha respondido)
