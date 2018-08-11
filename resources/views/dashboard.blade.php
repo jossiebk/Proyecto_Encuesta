@@ -30,6 +30,7 @@
           </div>
       </div>
 
+      <br>
 
       <div class="row align-items-center justify-content-center">
           <div class="col-lg-4 col-sm-6">
@@ -49,10 +50,11 @@
           </div>
       </div>
       
+      <br>
 
       <div class="row align-items-center justify-content-center">
           <div class="col-lg-4 col-sm-6 ">
-            <a class="portfolio-box" href="#">
+            <a class="portfolio-box nav-link js-scroll-trigger" href="#search">
               <img class="img-fluid" src="img/buscar.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
@@ -67,5 +69,10 @@
             </a>
           </div>
      </div>
+
+     <br>
+
+     @include('blocks.search')
+
  </div>
 @endsection
