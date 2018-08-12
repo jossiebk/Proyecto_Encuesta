@@ -49,6 +49,7 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#">Opcion4</a>
             </li>
+            @yield('boton')
           </ul>
         </div>
       </div>
