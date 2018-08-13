@@ -22,5 +22,18 @@ Route::get('/dash', function () {
 
 Route::get('/teacher_form','TeacherController@index');
 
+
 Route::get('/search', 'SearchController@show'); //Ruta para buscar a un catedratico recibe como parametro el nombre a buscar
+
+
+Route::get('/formAux', function () {
+    return view('AuxForm');
+    });
+
+Route::post('/teacher_form/evaluate','TeacherController@store');
+
+// ruta para perfil del catedratico
+Route::get('/perCat', function () {
+    return view('catProfile');
+});
 
