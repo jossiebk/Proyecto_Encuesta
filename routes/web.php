@@ -24,11 +24,11 @@ Route::get('/teacher_form','TeacherController@index');
 
 Route::get('/formAux', function () {
     return view('AuxForm');
+    });
 
 Route::post('/teacher_form/evaluate','TeacherController@store');
 
 // ruta para perfil del catedratico
 Route::get('/perCat', function () {
     return view('catProfile');
-
 });
