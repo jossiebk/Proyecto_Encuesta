@@ -21,3 +21,6 @@ Route::get('/dash', function () {
 });
 
 Route::get('/teacher_form','TeacherController@index');
+
+Route::get('/search', 'SearchController@show'); //Ruta para buscar a un catedratico recibe como parametro el nombre a buscar
+

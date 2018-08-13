@@ -34,7 +34,7 @@ class User extends Authenticatable
 
     //$user->assistant
     public function assistant(){
-        return $this->hasOne(Assisant::class, 'id_user');
+        return $this->hasOne(Assistant::class, 'id_user');
     }
 
     //$user->reviews (Encuestas que el usuario ha respondido)
