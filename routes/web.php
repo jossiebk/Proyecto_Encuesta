@@ -21,3 +21,19 @@ Route::get('/dash', function () {
 });
 
 Route::get('/teacher_form','TeacherController@index');
+
+
+
+
+
+
+
+
+
+
+
+
+// ruta para perfil del catedratico
+Route::get('/perCat', function () {
+    return view('catProfile');
+});
