@@ -21,3 +21,4 @@ Route::get('/dash', function () {
 });
 
 Route::get('/teacher_form','TeacherController@index');
+Route::post('/teacher_form/evaluate','TeacherController@store');

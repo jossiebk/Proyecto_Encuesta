@@ -8,7 +8,7 @@
 		<br><br><br><br>
 		<!-- Formulario de preguntas dedicadas a la evaluacion del catedratico-->
 
-		{!! Form::open(['url' => '/teacher_form/calculate', 'class' => 'form-row align-items-center']) !!}
+		{!! Form::open(['url' => '/teacher_form/evaluate', 'method' => 'post', 'class' => 'form-row align-items-center']) !!}
 		<div class="container" type="text" readonly>
 
 
@@ -28,60 +28,60 @@
  		<!--******************************************************************-->
  		{!!Form::label('Pregunta1', '1. Pregunta 1?' ,array('class' => 'text-white'))!!}
  		<br>
-		{!!Form::select('P1', array('N1' => '1', 'N2' => '2','N3' => '3', 'N4' => '4','N5' => '5', 'N6' => '6','N7' => '7', 'N8' => '8','N9' => '9', 'N10' => '10'), '', array('class' => 'custom-select mr-sm-2' ))!!}
+		{!!Form::select('P1', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), '', array('class' => 'custom-select mr-sm-2' ))!!}
 
 
  		<!--******************************************************************-->
  		{!!Form::label('Pregunta2', '2. Pregunta 2?',array('class' => 'text-white'))!!}
  		<br>
-		{!!Form::select('P2', array('N1' => '1', 'N2' => '2','N3' => '3', 'N4' => '4','N5' => '5', 'N6' => '6','N7' => '7', 'N8' => '8','N9' => '9', 'N10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
+		{!!Form::select('P2', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
  	
 
  		<!--******************************************************************-->
  		{!!Form::label('Pregunta3', '3. Pregunta 3?',array('class' => 'text-white'))!!}
  		<br>
-		{!!Form::select('P3', array('N1' => '1', 'N2' => '2','N3' => '3', 'N4' => '4','N5' => '5', 'N6' => '6','N7' => '7', 'N8' => '8','N9' => '9', 'N10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
+		{!!Form::select('P3', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
  
 
 
  		<!--******************************************************************-->
  		{!!Form::label('Pregunta4', '4. Pregunta 4?',array('class' => 'text-white'))!!}
  		<br>
-		{!!Form::select('P4', array('N1' => '1', 'N2' => '2','N3' => '3', 'N4' => '4','N5' => '5', 'N6' => '6','N7' => '7', 'N8' => '8','N9' => '9', 'N10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
+		{!!Form::select('P4', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
 			
 <!--******************************************************************-->
  		{!!Form::label('Pregunta5', '5. Pregunta 5?',array('class' => 'text-white'))!!}
  		<br>
-		{!!Form::select('P5', array('N1' => '1', 'N2' => '2','N3' => '3', 'N4' => '4','N5' => '5', 'N6' => '6','N7' => '7', 'N8' => '8','N9' => '9', 'N10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
+		{!!Form::select('P5', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
 
 
  		<!--******************************************************************-->
  		{!!Form::label('Pregunta6', '6. Pregunta 6?',array('class' => 'text-white'))!!}
  		<br>
-		{!!Form::select('P6', array('N1' => '1', 'N2' => '2','N3' => '3', 'N4' => '4','N5' => '5', 'N6' => '6','N7' => '7', 'N8' => '8','N9' => '9', 'N10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
+		{!!Form::select('P6', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
  	
 
  		<!--******************************************************************-->
  		{!!Form::label('Pregunta7', '7. Pregunta 7?',array('class' => 'text-white'))!!}
  		<br>
-		{!!Form::select('P7', array('N1' => '1', 'N2' => '2','N3' => '3', 'N4' => '4','N5' => '5', 'N6' => '6','N7' => '7', 'N8' => '8','N9' => '9', 'N10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!} 
+		{!!Form::select('P7', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!} 
 
 
  		<!--******************************************************************-->
  		{!!Form::label('Pregunta8', '8. Pregunta 8?',array('class' => 'text-white'))!!}
  		<br>
-		{!!Form::select('P8', array('N1' => '1', 'N2' => '2','N3' => '3', 'N4' => '4','N5' => '5', 'N6' => '6','N7' => '7', 'N8' => '8','N9' => '9', 'N10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
+		{!!Form::select('P8', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
 
 		<!--******************************************************************-->
  		{!!Form::label('Pregunta9', '9. Pregunta 9?',array('class' => 'text-white'))!!}
  		<br>
-		{!!Form::select('P9', array('N1' => '1', 'N2' => '2','N3' => '3', 'N4' => '4','N5' => '5', 'N6' => '6','N7' => '7', 'N8' => '8','N9' => '9', 'N10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
+		{!!Form::select('P9', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
  
 
  		<!--******************************************************************-->
  		{!!Form::label('Pregunta10', '10. Pregunta 10?',array('class' => 'text-white'))!!}
  		<br>
-		{!!Form::select('P10', array('N1' => '1', 'N2' => '2','N3' => '3', 'N4' => '4','N5' => '5', 'N6' => '6','N7' => '7', 'N8' => '8','N9' => '9', 'N10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
+		{!!Form::select('P10', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
 
 		<br><br><br><br>
  			{!!Form::submit('Evaluar', array('class'=>'btn btn-primary btn-lg btn-block'))!!}

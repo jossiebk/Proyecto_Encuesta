@@ -34,7 +34,11 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       //dd($request->all());
+       $var1 = ($request->P1)+($request->P2)+($request->P3)+($request->P4)+($request->P5)+($request->P6)+($request->P7)+($request->P8)+($request->P9)+($request->P10);
+        echo $var1;
+
+
     }
 
     /**
