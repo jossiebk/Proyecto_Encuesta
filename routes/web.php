@@ -21,3 +21,12 @@ Route::get('/dash', function () {
 });
 
 Route::get('/teacher_form','TeacherController@index');
+
+
+
+
+
+
+Route::get('/formAux', function () {
+    return view('AuxForm');
+});
