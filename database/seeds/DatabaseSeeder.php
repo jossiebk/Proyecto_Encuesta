@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
         //Creacion de 3 profesores
         factory(App\User::class, 1)->create([
         	'email' => 'teacher1@mail.com',	
+            'name' => 'Herman'
     	])
     	->each(function (App\User $u){
     		factory(App\Teacher::class, 1)->create(['id_user' => $u->id]);

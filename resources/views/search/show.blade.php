@@ -39,7 +39,7 @@
 	            <div class="service-box mt-5 mx-auto">
 	              <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
 	              <h3 class="mb-3">Sin resultados</h3>
-	              <p class="text-muted mb-0">No existe un usario con el nombre ingresado.</p>
+	              <p class="text-muted mb-0">No existe un usuario con el nombre ingresado.</p>
 	            </div>
 	          </div>
           @endforelse
