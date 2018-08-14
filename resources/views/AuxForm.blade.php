@@ -20,35 +20,18 @@
       </div>
     </header>
    <section class="bg-primary" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-          	<hr class="light my-4">
-          	<br>
-            <h4 class="text-faded mb-4">1. ¿Pregunta 1?</h4>
-        		{!!Form::select('r1', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), '', array('class' => 'custom-select mr-sm-2' ))!!}
-        	<hr>
-   	        <h4 class="text-faded mb-4">2. ¿Pregunta 2?</h4>
-   	        <br>
-        		{!!Form::select('r2', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), '', array('class' => 'custom-select mr-sm-2' ))!!}
-        	<hr>
-        	<h4 class="text-faded mb-4">3. ¿Pregunta 3?</h4>
-        	<br>
-        		{!!Form::select('r3', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), '', array('class' => 'custom-select mr-sm-2' ))!!}
-        	<hr>
-        	<h4 class="text-faded mb-4">4. ¿Pregunta 4?</h4>
-        	<br>
-        		{!!Form::select('r4', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), '', array('class' => 'custom-select mr-sm-2' ))!!}
-        	<hr>
-        	<h4 class="text-faded mb-4">5. ¿Pregunta 5?</h4>
-        	<br>
-        		{!!Form::select('r5', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), '', array('class' => 'custom-select mr-sm-2' ))!!}
-        	<hr>
-         	<h4 class="text-faded mb-4">6. ¿Pregunta 6?</h4>
-        		{!!Form::select('r6', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), '', array('class' => 'custom-select mr-sm-2' ))!!}
-        	<br>
-        	<p class="text-faded mb-4"> </p>
-        	<a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Evaluar</a>
-      </div>
+      <form method="post" action="{{ url('/formAux') }}">
+        @csrf
+        <input type="number" name="p1" placeholder="puntualidad">
+        <input type="number" name="p2">
+        <input type="number" name="p3">
+        <input type="number" name="p4">
+        <input type="number" name="p5" placeholder="asistencia">
+        <input type="text" name="comment" placeholder="comentario">
+        <input type="number" name="id_user_evaluator">
+        <input type="number" name="id_user_evaluated">
+        <input type="number" name="id_course">
+        <button type="submit">Enviar</button>
+      </form>
     </section>
 @endsection

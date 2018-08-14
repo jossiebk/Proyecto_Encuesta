@@ -26,9 +26,13 @@ Route::get('/teacher_form','TeacherController@index');
 Route::get('/search', 'SearchController@show'); //Ruta para buscar a un catedratico recibe como parametro el nombre a buscar
 
 
-Route::get('/formAux', function () {
-    return view('AuxForm');
-    });
+
+
+Route::get('/formAux', 'AssistantController@evaluation');
+
+Route::post('/formAux', 'AssistantController@saveEvaluation');
+
+
 
 Route::post('/teacher_form/evaluate','TeacherController@store');
 
