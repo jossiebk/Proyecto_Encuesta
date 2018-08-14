@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Review;
 class TeacherController extends Controller
 {
     /**
@@ -34,11 +34,19 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-       //dd($request->all());
-       $var1 = ($request->P1)+($request->P2)+($request->P3)+($request->P4)+($request->P5)+($request->P6)+($request->P7)+($request->P8)+($request->P9)+($request->P10);
-        echo $var1;
+        $r = new Review();
 
-
+            $r->puntuality = $request->input('P1');
+            $r->knowledge = $request->input('P2');
+            $r->presentation = $request->input('P3');;
+            $r->notes = $request->input('P4');
+            $r->assistance = $request->input('P5');;
+            $r->comment = $request->input('comment');;
+            $r->id_user_evaluator = 1; //$request->input();
+            $r->id_user_evaluated = 1;//$request->input();
+            $r->id_course = 1;//$request->input();
+            $r->save();
+            return redirect('/');
     }
 
     /**
