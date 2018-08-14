@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('home');
 });
@@ -37,3 +38,7 @@ Route::get('/perCat', function () {
     return view('catProfile');
 });
 
+// ruta para perfil obtener cursos del catedratico
+Route::get('/ProfileCourse', function () {
+    return view('ProfessorCourse');
+});
