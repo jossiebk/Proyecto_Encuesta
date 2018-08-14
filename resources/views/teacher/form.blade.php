@@ -10,7 +10,7 @@
 
 		{!! Form::open(['url' => '/teacher_form/evaluate', 'method' => 'post', 'class' => 'form-row align-items-center']) !!}
 		<div class="container" type="text" readonly>
-
+		{!! Form::token('tokenN')!!}
 
 			<div class="container">
 
@@ -55,33 +55,10 @@
 		{!!Form::select('P5', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
 
 
- 		<!--******************************************************************-->
- 		{!!Form::label('Pregunta6', '6. Pregunta 6?',array('class' => 'text-white'))!!}
+ 		{!!Form::label('Comentario', '11. Agregue un comentario?',array('class' => 'text-white'))!!}
  		<br>
-		{!!Form::select('P6', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
- 	
+		{!!Form::text('comment',null,array('max' => 10, 'min'=>10 ))!!}
 
- 		<!--******************************************************************-->
- 		{!!Form::label('Pregunta7', '7. Pregunta 7?',array('class' => 'text-white'))!!}
- 		<br>
-		{!!Form::select('P7', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!} 
-
-
- 		<!--******************************************************************-->
- 		{!!Form::label('Pregunta8', '8. Pregunta 8?',array('class' => 'text-white'))!!}
- 		<br>
-		{!!Form::select('P8', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
-
-		<!--******************************************************************-->
- 		{!!Form::label('Pregunta9', '9. Pregunta 9?',array('class' => 'text-white'))!!}
- 		<br>
-		{!!Form::select('P9', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
- 
-
- 		<!--******************************************************************-->
- 		{!!Form::label('Pregunta10', '10. Pregunta 10?',array('class' => 'text-white'))!!}
- 		<br>
-		{!!Form::select('P10', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
 
 		<br><br><br><br>
  			{!!Form::submit('Evaluar', array('class'=>'btn btn-primary btn-lg btn-block'))!!}
