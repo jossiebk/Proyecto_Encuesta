@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
+
 use App\Teacher;
 
-=======
+
 use App\Review;
->>>>>>> 970a486176764a9ae81805b8f5e03bacf132b27d
+
 class TeacherController extends Controller
 {
     /**
