@@ -3,12 +3,13 @@
 
 @section('title', 'Perfil de Catedratico')
 <div style="background-image: url(img/header.jpg); height: 1250px; width: 1600px;">
+	
 @section('content')
 	<br><br><br><br><br><br><br><br>
 	<div><h1>perfil de catedratico</h1></div>
 	<br><br>
-	<div><h4>Nombre:</h3></div>
-	<div><h4>Fecha de Nacimiento:</h3></div>
+	<div><h4>Nombre: {{ $teacher->user->name }} </h3>  </div>
+	<div><h4>Fecha de Nacimiento: {{ $teacher->birthdate }} </h3></div>
 	<div><h4>Descripcion:</h3></div>
 	<div><h4>titulos:</h3></div>
 	<div><h4>Experiencia:</h3></div>
@@ -18,9 +19,9 @@
 	<div>
 		<table>
 			<tr>
-				<td>{!!Form::submit('Encuesta', array('class'=>'btn btn-primary btn-lg btn-block'))!!}</td>
-				<td>{!!Form::submit('Reseña', array('class'=>'btn btn-primary btn-lg btn-block'))!!}</td>
-				<td>{!!Form::submit('Cursos', array('class'=>'btn btn-primary btn-lg btn-block'))!!}</td>
+				<td><button>Calificar</button></td>
+				<td><button>Opinar</button></td>
+				<td><button>Cursos</button></td>
 			</tr>
 		</table>
 	</div>

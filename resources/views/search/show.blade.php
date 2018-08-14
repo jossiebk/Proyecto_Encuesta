@@ -21,7 +21,9 @@
 	            <div class="service-box mt-5 mx-auto">
 	              <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
 	              <h3 class="mb-3">Catedratico</h3>
-	              <p class="text-muted mb-0">{{ $user->name }}</p>
+	              <a href="{{ url('/perCat/'.$user->teacher->id) }}">
+	              	<p class="text-muted mb-0">{{ $user->name }}</p>
+	              </a>
 	            </div>
 	          </div>
           	@endif

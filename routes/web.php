@@ -34,9 +34,7 @@ Route::get('/formAux', function () {
 Route::post('/teacher_form/evaluate','TeacherController@store');
 
 // ruta para perfil del catedratico
-Route::get('/perCat', function () {
-    return view('catProfile');
-});
+Route::get('/perCat/{id}', 'TeacherController@profile');
 
 // ruta para perfil obtener cursos del catedratico
 Route::get('/ProfileCourse', function () {

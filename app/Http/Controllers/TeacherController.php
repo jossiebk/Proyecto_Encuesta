@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Teacher;
 
 class TeacherController extends Controller
 {
@@ -84,5 +85,11 @@ class TeacherController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    //Metodo para mostrar el perfil
+    public function profile($id){
+        $teacher = Teacher::find($id);
+        return view('catProfile')->with(compact('teacher'));
     }
 }
