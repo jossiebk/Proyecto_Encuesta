@@ -20,18 +20,101 @@
       </div>
     </header>
    <section class="bg-primary" id="about">
-      <form method="post" action="{{ url('/formAux') }}">
-        @csrf
-        <input type="number" name="p1" placeholder="puntualidad">
-        <input type="number" name="p2">
-        <input type="number" name="p3">
-        <input type="number" name="p4">
-        <input type="number" name="p5" placeholder="asistencia">
-        <input type="text" name="comment" placeholder="comentario">
-        <input type="number" name="id_user_evaluator">
-        <input type="number" name="id_user_evaluated">
-        <input type="number" name="id_course">
-        <button type="submit">Enviar</button>
-      </form>
+     <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <form method="post" action="{{ url('/formAux') }}">
+              @csrf
+              <hr>
+              <p class="text-faded mb-4">1. ¿Se presenta puntual a dar laboratorio?</p>
+              <br>
+              <select class="btn btn-light btn-xl js-scroll-trigger" name="p1" style="width: 500px ">
+                <option value="1">1</option> 
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option> 
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option> 
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <hr>
+              <p class="text-faded mb-4">2. ¿conocimiento?</p>
+              <br>
+              <select class="btn btn-light btn-xl js-scroll-trigger" name="p2" style="width: 500px ">
+                <option value="1">1</option> 
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option> 
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option> 
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <hr>
+              <p class="text-faded mb-4">3. ¿Su presentacion es la adecuada?</p>
+              <br>
+              <select class="btn btn-light btn-xl js-scroll-trigger" name="p3" style="width: 500px ">
+                <option value="1">1</option> 
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option> 
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option> 
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <hr>
+              <p class="text-faded mb-4">4. ¿Proporciona el material adecuado?</p>
+              <br>
+              <select class="btn btn-light btn-xl js-scroll-trigger" name="p4" style="width: 450px ">
+                <option value="1">1</option> 
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option> 
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option> 
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <hr>
+              <p class="text-faded mb-4">5. ¿Asiste a dar laboratorio todos los dias?</p>
+              <br>
+              <select class="btn btn-light btn-xl js-scroll-trigger" name="p5" style="width: 450px ">
+                <option value="1">1</option> 
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option> 
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option> 
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <hr>
+              <p class="text-faded mb-4">5. ¿Asiste a dar laboratorio todos los dias?</p>
+              <br>
+              <textarea rows="4" cols="50" placeholder="comentario"></textarea>
+              <br>
+              <input type="number" name="id_user_evaluator">
+              <br>
+              <input type="number" name="id_user_evaluated">
+              <br>
+              <input type="number" name="id_course">
+              <br>
+              <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Evaluar</a>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 @endsection
