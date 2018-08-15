@@ -45,8 +45,12 @@ class TeacherController extends Controller
             $r->knowledge = $request->input('P2');
             $r->presentation = $request->input('P3');;
             $r->notes = $request->input('P4');
-            $r->assistance = $request->input('P5');;
-            $r->comment = $request->input('comment');;
+            $r->assistance = $request->input('P5');
+            if(empty($request->input('comment'))){
+            $r->comment = 'NO COMENT';
+            }else{
+            $r->comment = $request->input('comment');                
+            }
             $r->id_user_evaluator = 1; //$request->input();
             $r->id_user_evaluated = 1;//$request->input();
             $r->id_course = 1;//$request->input();

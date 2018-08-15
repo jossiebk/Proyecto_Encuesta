@@ -8,7 +8,7 @@
 		<br><br><br><br>
 		<!-- Formulario de preguntas dedicadas a la evaluacion del catedratico-->
 
-		{!! Form::open(['url' => '/teacher_form/evaluate', 'method' => 'post', 'class' => 'form-row align-items-center']) !!}
+		{!! Form::open(['url' => '/teacher_form/evaluate', 'method' => 'post', 'class' => 'form-row align-items-center','onsubmit' => 'return confirm("Quieres enviar esta evaluacion?")']) !!}
 		<div class="container" type="text" readonly>
 		{!! Form::token('tokenN')!!}
 
@@ -26,38 +26,38 @@
 		</div>
 		<BR><BR>
  		<!--******************************************************************-->
- 		{!!Form::label('Pregunta1', '1. Pregunta 1?' ,array('class' => 'text-white'))!!}
+ 		{!!Form::label('Pregunta1', '1. El catedratico cumple con el horario establecido?' ,array('class' => 'text-white'))!!}
  		<br>
 		{!!Form::select('P1', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), '', array('class' => 'custom-select mr-sm-2' ))!!}
 
 
  		<!--******************************************************************-->
- 		{!!Form::label('Pregunta2', '2. Pregunta 2?',array('class' => 'text-white'))!!}
+ 		{!!Form::label('Pregunta2', '2. El catedratico demuestra su dominio sobre los temas impartidos?',array('class' => 'text-white'))!!}
  		<br>
 		{!!Form::select('P2', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
  	
 
  		<!--******************************************************************-->
- 		{!!Form::label('Pregunta3', '3. Pregunta 3?',array('class' => 'text-white'))!!}
+ 		{!!Form::label('Pregunta3', '3.La presentacion personal del catedratico es la adecuada?',array('class' => 'text-white'))!!}
  		<br>
 		{!!Form::select('P3', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
  
 
 
  		<!--******************************************************************-->
- 		{!!Form::label('Pregunta4', '4. Pregunta 4?',array('class' => 'text-white'))!!}
+ 		{!!Form::label('Pregunta4', '4. El catedratico entrega notas en las fecha establecida?',array('class' => 'text-white'))!!}
  		<br>
 		{!!Form::select('P4', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
 			
 <!--******************************************************************-->
- 		{!!Form::label('Pregunta5', '5. Pregunta 5?',array('class' => 'text-white'))!!}
+ 		{!!Form::label('Pregunta5', '5. El catedratico asiste al curso los dias establecidos?',array('class' => 'text-white'))!!}
  		<br>
 		{!!Form::select('P5', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10'), 'null', array('class' => 'custom-select mr-sm-2' ))!!}
 
 
- 		{!!Form::label('Comentario', '11. Agregue un comentario?',array('class' => 'text-white'))!!}
+ 		{!!Form::label('Comentario', 'Agregue un comentario (Opcional).',array('class' => 'text-white'))!!}
  		<br>
-		{!!Form::text('comment',null,array('max' => 10, 'min'=>10 ))!!}
+		{!!Form::textarea('comment',null,array('rows' => 10, 'cols' => 50 ))!!}
 
 
 		<br><br><br><br>
