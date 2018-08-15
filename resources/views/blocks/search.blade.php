@@ -13,9 +13,18 @@
             </div>
             <input type="text" class="form-control" placeholder="Nombre a buscar..." aria-label="Nombre a buscar..." aria-describedby="basic-addon1" name="user_name">
           </div>
+          @if ($errors->any())
+            <div >
+                <ul style="list-style-type:none">
+                    @foreach ($errors->all() as $error)
+                        <li><p class="section-heading h4">{{ $error }}</p></li>
+                    @endforeach
+                </ul>
+            </div>
+          @endif
           <input class="btn btn-light btn-xl" type="submit" value="Buscar!"></input>
         </form>
       </div>
-    </div>
+    </div>    
   </div>
 </section>

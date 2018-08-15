@@ -11,6 +11,9 @@
 @section('content')
 <div style="background-image: url(img/header.jpg); height: 1250px; width: 1400px;">
 
+        
+
+
       <div class="row align-items-center justify-content-center">
           <h1 style="color:transparent;" class="display-1">e</h1>
       </div>
