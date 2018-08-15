@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Teacher;
-
+use App\TeacherComment;
 
 use App\Review;
 
@@ -108,4 +108,20 @@ class TeacherController extends Controller
         $teacher = Teacher::find($id);
         return view('catProfile')->with(compact('teacher'));
     }
+
+    //metodo para mostrar el area de reseñas y calificaciones
+     public function review($id){
+        $teacher = Teacher::find($id);
+        return view('catReview')->with(compact('teacher'));
+    }
+//metodo para almacenar las opiniones y calificaciones de los catedraticos
+    public function saveReview(Request $request){
+        $r = new TeacherComment();
+        $r->comment = $request->input('opinion');
+        $r->score = $request->input('score');
+        $r->id_teacher = $request->input('id');
+        $r->save();
+        return back();
+    }
+
 }

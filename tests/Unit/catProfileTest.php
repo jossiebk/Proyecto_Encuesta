@@ -13,7 +13,7 @@ class catProfile extends TestCase
      * @test
      * @return void
      */
-    public function testExample()
+    public function it_validates_the_pull_of_the_teacher()
     {	
     	$this->get('/perCat/1')
     		->assertStatus(200);

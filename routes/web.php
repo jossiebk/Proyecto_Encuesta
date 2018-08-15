@@ -44,3 +44,10 @@ Route::get('/perCat/{id}', 'TeacherController@profile');
 Route::get('/ProfileCourse', function () {
     return view('ProfessorCourse');
 });
+
+
+//ruta para obtener el area para calificar catedraticos
+Route::get('/teacherReview/{id}', 'TeacherController@review');
+
+Route::post('/teacherReview/{id}', 'TeacherController@saveReview');
+

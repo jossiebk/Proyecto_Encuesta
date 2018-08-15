@@ -34,7 +34,7 @@
 
 </div>
 
-academic_title_1
+
 @endsection
 
 
