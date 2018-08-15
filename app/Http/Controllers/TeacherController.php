@@ -114,13 +114,22 @@ class TeacherController extends Controller
         $teacher = Teacher::find($id);
         return view('catReview')->with(compact('teacher'));
     }
-//metodo para almacenar las opiniones y calificaciones de los catedraticos
+
+
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    //metodo para almacenar las opiniones y calificaciones de los catedraticos
     public function saveReview(Request $request){
         $r = new TeacherComment();
-        $r->comment = $request->input('opinion');
-        $r->score = $request->input('score');
-        $r->id_teacher = $request->input('id');
-        $r->save();
+            $r->comment = $request->input('opinion');
+            $r->score = $request->input('score');
+            $r->id_teacher = $request->input('id');
+            $r->save();
         return back();
     }
 

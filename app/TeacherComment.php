@@ -12,13 +12,11 @@ class TeacherComment extends Model
      * @var array
      */
     protected $fillable = [
-        'comment', 'score', 'id_teacher'
+        'comment', 'score', 'id_teacher',
     ];
 
-    //$review->user (Usuario que realizo la evaluacion)
-    public function user(){
-    	return $this->belongsTo(User::class, 'id_teacher');
+    //$TeacherComment->teacher (Usuario que realizo la evaluacion)
+    public function teacher(){
+    	return $this->belongsTo(Teacher::class, 'id');
     }
-
-  
 }
