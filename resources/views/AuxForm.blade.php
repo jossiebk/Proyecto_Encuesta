@@ -101,9 +101,9 @@
                 <option value="10">10</option>
               </select>
               <hr>
-              <p class="text-faded mb-4">5. ¿Asiste a dar laboratorio todos los dias?</p>
+              <p class="text-faded mb-4">6. Realice un comentario sobre el axuiliar.</p>
               <br>
-              <textarea rows="4" cols="50" placeholder="comentario"></textarea>
+              <textarea rows="4" cols="50" name="p6" placeholder="comentario"></textarea>
               <br>
               <input type="number" name="id_user_evaluator">
               <br>
