@@ -103,7 +103,7 @@
               <hr>
               <p class="text-faded mb-4">6. Realice un comentario sobre el axuiliar.</p>
               <br>
-              <textarea rows="4" cols="50" name="p6" placeholder="comentario"></textarea>
+              <textarea rows="4" cols="50" name="comment" placeholder="comentario"></textarea>
               <br>
               <input type="number" name="id_user_evaluator">
               <br>
@@ -111,7 +111,7 @@
               <br>
               <input type="number" name="id_course">
               <br>
-              <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Evaluar</a>
+              <button>Evaluar</button>
             </form>
           </div>
         </div>
