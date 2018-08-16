@@ -35,10 +35,10 @@ class teacherCommentTest extends TestCase
      */
     public function TeacherCommentTest()
     {
-	    $response = $this->json('POST','/teacherReview/1', ['opinion' => 'kfhfh','score' => '1','id' => 1]);
-	    $response->assertSuccessful();
-
+	    $response = $this->json('POST','/teacherReview/1', ['opinion' => 'letras de prueba','score' => '1','id'=>'1']);
+	    $this->assertDatabaseHas('teacher_comments', ['comment' => 'letras de prueba']);
     }
-   
-
+    
+    
+    
 }

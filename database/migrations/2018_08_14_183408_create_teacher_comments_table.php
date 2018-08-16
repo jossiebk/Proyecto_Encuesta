@@ -19,6 +19,7 @@ class CreateTeacherCommentsTable extends Migration
             $table->text('score');
             $table->unsignedInteger('id_teacher');
             $table->foreign('id_teacher')->references('id')->on('teachers');
+            $table->timestamps();
         });
     }
 
