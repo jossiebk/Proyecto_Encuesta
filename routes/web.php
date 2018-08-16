@@ -41,8 +41,11 @@ Route::post('/teacher_form/evaluate','TeacherController@store');
 Route::get('/perCat/{id}', 'TeacherController@profile');
 
 // ruta para perfil obtener cursos del catedratico
-//Route::get('/ProfileCourse', function () {
-  //  return view('ProfessorCourse');
-//});
-
 Route::get('/ProfileCourse/{id}', 'CourseController@course_teacher_by_id_teacher');
+
+//ruta para obtener el area para calificar catedraticos
+Route::get('/teacherReview/{id}', 'TeacherController@review');
+
+Route::post('/teacherReview/{id}', 'TeacherController@saveReview');
+
+

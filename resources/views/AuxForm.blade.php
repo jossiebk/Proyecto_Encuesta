@@ -101,9 +101,9 @@
                 <option value="10">10</option>
               </select>
               <hr>
-              <p class="text-faded mb-4">5. ¿Asiste a dar laboratorio todos los dias?</p>
+              <p class="text-faded mb-4">6. Realice un comentario sobre el axuiliar.</p>
               <br>
-              <textarea rows="4" cols="50" placeholder="comentario"></textarea>
+              <textarea rows="4" cols="50" name="comment" placeholder="comentario"></textarea>
               <br>
               <input type="number" name="id_user_evaluator">
               <br>
@@ -111,7 +111,11 @@
               <br>
               <input type="number" name="id_course">
               <br>
-              <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Evaluar</a>
+<<<<<<< HEAD
+              <button >Evaluar</button>
+=======
+              <button>Evaluar</button>
+>>>>>>> f8e05fb2f01b64531518fda6cc3f3fc97c9d49fd
             </form>
           </div>
         </div>
