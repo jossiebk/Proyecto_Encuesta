@@ -23,6 +23,7 @@
 
   		@if(isset($consulta) && count($consulta) > 0)
 <center>
+<h3>Los cursos son:</h3>
 <table>
 <tr>
 <th> ID &nbsp;</th>
@@ -37,6 +38,8 @@
 </table>
 </center>
 <BR><BR>
+@else
+<h3>No se encontró ningún curso</h3>
 @endif
 		</div>
 		<BR><BR>
