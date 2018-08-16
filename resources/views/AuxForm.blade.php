@@ -111,7 +111,7 @@
               <br>
               <input type="number" name="id_course">
               <br>
-              <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Evaluar</a>
+              <button >Evaluar</button>
             </form>
           </div>
         </div>

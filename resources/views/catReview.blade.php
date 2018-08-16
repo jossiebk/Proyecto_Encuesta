@@ -14,9 +14,9 @@
 	<div><textarea type="text" name="opinion" placeholder="comentario" style="width:700px; height:100px"></textarea></div>
 	<br><br>
 	<div><input type="text" name="score" placeholder="punteo"></input></div>
-	 <div><input type="text" name="id" placeholder="id"></input></div>
+	 <div><input type="number" name="id" placeholder="id"></input></div>
 	<br><br>
-	<a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Guardar</a>
+	<button >Guardar</button>
 	</form>
 </div>
 
