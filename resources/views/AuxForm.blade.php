@@ -111,11 +111,7 @@
               <br>
               <input type="number" name="id_course">
               <br>
-<<<<<<< HEAD
               <button >Evaluar</button>
-=======
-              <button>Evaluar</button>
->>>>>>> f8e05fb2f01b64531518fda6cc3f3fc97c9d49fd
             </form>
           </div>
         </div>
