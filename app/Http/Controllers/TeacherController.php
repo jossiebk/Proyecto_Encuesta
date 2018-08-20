@@ -39,7 +39,7 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        $r = new Review();
+       /* $r = new Review();
 
             $r->puntuality = $request->input('P1');
             $r->knowledge = $request->input('P2');
@@ -54,7 +54,7 @@ class TeacherController extends Controller
             $r->id_user_evaluator = 1; //$request->input();
             $r->id_user_evaluated = 1;//$request->input();
             $r->id_course = 1;//$request->input();
-            $r->save();
+            $r->save();*/
             return redirect('/');
     }
 
