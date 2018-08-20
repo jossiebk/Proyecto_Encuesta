@@ -48,4 +48,6 @@ Route::get('/teacherReview/{id}', 'TeacherController@review');
 
 Route::post('/teacherReview/{id}', 'TeacherController@saveReview');
 
+Route::get('/teacher/dashboard' 'TeacherController@dashboard');
+
 
