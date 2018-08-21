@@ -46,19 +46,22 @@
   <form method="post" action="{{ url('/AuxReview') }}">
   @csrf
   <div>
-    <h4>Auxiliar: ################## </h4>  </div>
+    <h4>Auxiliar: ################## </h4>  
+  <div class="ec-stars-wrapper">
+    <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
+    <a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
+    <a href="#" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
+    <a href="#" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
+    <a href="#" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
+  </div>
+
+  </div>
   <div>
     <textarea type="text" name="opinion" placeholder="comentario" style="width:600px; height:200px"></textarea>
     <textarea type="text" name="opinion2" placeholder="comentario" style="width:600px; height:200px"></textarea>
   </div>
   <br><br>
-<div class="ec-stars-wrapper">
-  <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
-  <a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
-  <a href="#" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
-  <a href="#" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
-  <a href="#" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
-</div>
+
   <br><br>
   <button >Guardar</button>
   </form>
