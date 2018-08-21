@@ -49,6 +49,6 @@ Route::get('/teacherReview/{id}', 'TeacherController@review');
 Route::post('/teacherReview/{id}', 'TeacherController@saveReview');
 
 //ruta para obtener top 10 de catedraticos en general
-Route::post('/Reports/Top10General','Top10General@Report');
+Route::post('/Reports/Top10General','Reports@Top10General');
 
 
