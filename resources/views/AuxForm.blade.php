@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Encuesta Auxiliar')
-<div style="background-image: url(img/header.jpg); height: 1250px; width: 1400px;">
+<div style="background-image: url(img/header.jpg); height: 1550px; width: 1400px;">
 <style type="text/css">
   .slider0{
     -webkit-appearance: none;
@@ -73,55 +73,59 @@
       </div>
     </div>
     <BR><BR>
-    <!--******************************************************************-->
-    <p class="text-faded mb-4">1. ¿Se presenta puntual a dar laboratorio?</p>
+    <!--************************PREGUNTA 1******************************************-->
+    <p class="text-faded mb-4">1. ¿El auxiliar se presenta puntual a dar laboratorio?</p>
     <br>
-    <p class="text-faded mb-4">Malo ----------------------------------------------------------- Bueno</p>
+    <p class="text-faded mb-4">Malo ---------------------------------------------------------------------------------------- Bueno</p>
     <input type="range" min="0" max="10" value="50" class="slider0" id="R1" onchange="Barra1(this)">
     <br>
     <br>
 
-    <!--******************************************************************-->
-    {!!Form::label('Pregunta2', '2. El catedratico demuestra su dominio sobre los temas impartidos?',array('class' => 'text-white'))!!}
+    <!--***************************PREGUNTA 12***************************************-->
+    <p class="text-faded mb-4">2. ¿El auxiliar demuestra su dominio sobre los temas impartidos?</p>
     <br>
+    <p class="text-faded mb-4">Malo ---------------------------------------------------------------------------------------- Bueno</p>
     <br>
     <input type="range" min="0" max="10" value="50" class="slider0" id="R2" onchange="Barra1(this)">
     <br>
     <br>
 
     <!--******************************************************************-->
-    {!!Form::label('Pregunta3', '3.La presentacion personal del catedratico es la adecuada?',array('class' => 'text-white'))!!}
+    <p class="text-faded mb-4">3. ¿El auxiliar se presenta de forma decueda para impartir la clase ?</p>
     <br>
+    <p class="text-faded mb-4">Malo ---------------------------------------------------------------------------------------- Bueno</p>
     <br>
     <input type="range" min="0" max="10" value="50" class="slider0" id="R3" onchange="Barra1(this)">
     <br>
-      <br>
+    <br>
 
 
     <!--******************************************************************-->
-    {!!Form::label('Pregunta4', '4. El catedratico entrega notas en las fecha establecida?',array('class' => 'text-white'))!!}
+    <p class="text-faded mb-4">4. ¿El auxiliar proporciona el material adecuado?<
     <br>
+    <p class="text-faded mb-4">Malo ---------------------------------------------------------------------------------------- Bueno</p>
     <br>
     <input type="range" min="0" max="10" value="50" class="slider0" id="R4" onchange="Barra1(this)">
     <br>
     <br>    
 <!--******************************************************************-->
-    {!!Form::label('Pregunta5', '5. El catedratico asiste al curso los dias establecidos?',array('class' => 'text-white'))!!}
+    <p class="text-faded mb-4">5. ¿El auxiliar asiste a dar laboratorio todos los dias?</p>
     <br>
+    <p class="text-faded mb-4">Malo ---------------------------------------------------------------------------------------- Bueno</p>
     <br>
     <input type="range" min="0" max="10" value="50" class="slider0" id="R5" onchange="Barra1(this)">
     <br>
     <br>
 
-    {!!Form::label('Comentario', 'Agregue un comentario (Opcional).',array('class' => 'text-white'))!!}
+    <p class="text-faded mb-4">6. Realice un comentario sobre el axuiliar.</p>
     <br>
-    {!!Form::textarea('comment',null,array('rows' => 10, 'cols' => 50 ))!!}
+              <textarea rows="4" cols="50" name="comment" placeholder="comentario"></textarea>
 
 
     <br><br><br><br>
-      {!!Form::submit('Evaluar', array('class'=>'btn btn-primary btn-lg btn-block'))!!}
+    <button >Evaluar</button>
     </div>
-    {!! Form::close() !!}
+
     </div>
 
     <script>
