@@ -4,11 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Review;
+use App\Assistant;
 
 class AssistantController extends Controller
 {
     public function evaluation(){
     	return view('AuxForm');
+    }
+
+    public function ReviewAux($id){
+        $assistant = Assistant::find($id);
+        return view('AuxReview')->with(compact("assistant"));
+    }
+
+    public function savereview(Request $request){
+        return back();
     }
 
     public function saveEvaluation(Request $request){
@@ -26,4 +36,7 @@ class AssistantController extends Controller
     	return back();
 
     }
+
+
+
 }

@@ -51,3 +51,6 @@ Route::get('/teacherReview/{id}', 'TeacherController@review');
 
 Route::post('/teacherReview/{id}', 'TeacherController@saveReview');
 
+Route::get('/AuxReview/{id}', 'AssistantController@ReviewAux');
+
+Route::post('/AuxReview/{id}', 'AssistantController@savereview');
