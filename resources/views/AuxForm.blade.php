@@ -73,6 +73,8 @@
       </div>
     </div>
     <BR><BR>
+    <form method="post" action="{{ url('/formAux') }}">
+    @csrf
     <!--************************PREGUNTA 1******************************************-->
     <p class="text-faded mb-4">1. ¿El auxiliar se presenta puntual a dar laboratorio?</p>
     <br>
@@ -141,7 +143,7 @@
       }}
           
     </script>
-
+   </form>
   </div>
 
 @section('content')

@@ -10,6 +10,9 @@ class AssistantController extends Controller
     public function evaluation(){
     	return view('AuxForm');
     }
+    public function reviewAux(){
+        return view('AuxReview');
+    }
 
     public function saveEvaluation(Request $request){
     	$r = new Review();
@@ -26,4 +29,6 @@ class AssistantController extends Controller
     	return back();
 
     }
+
+
 }
