@@ -134,8 +134,7 @@ class TeacherController extends Controller
     }
 
     public function dashboard(){
-
-        
+        return view('teacher.dashboard');
     }
 
 }
