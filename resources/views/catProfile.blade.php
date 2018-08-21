@@ -2,7 +2,7 @@
 
 
 @section('title', 'Perfil de Catedratico')
-<div style="background-image: url(img/header.jpg); height: 1250px; width: 1600px;">
+<div style="background-image: url('/img/header.jpg'); height: 1250px; width: 1600px;>
 
 @section('content')
 	<br><br><br><br><br><br>
