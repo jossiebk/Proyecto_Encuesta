@@ -48,3 +48,5 @@ Route::get('/teacherReview/{id}', 'TeacherController@review');
 
 Route::post('/teacherReview/{id}', 'TeacherController@saveReview');
 
+// ruta para perfil del auxiliar
+Route::get('/assistantProfile/{id}', 'AssistantController@profile');

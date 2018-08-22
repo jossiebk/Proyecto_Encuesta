@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Review;
+use App\Assistant;
 
 class AssistantController extends Controller
 {
@@ -25,5 +26,11 @@ class AssistantController extends Controller
     	$r->save();
     	return back();
 
+    }
+
+    //Metodo para mostrar el perfil
+    public function profile($id){
+        $assistant = Assistant::find($id);
+        return view('AssistantProfile')->with(compact('assistant'));
     }
 }
