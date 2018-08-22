@@ -54,9 +54,12 @@
 
   </div>
   <div>
+
     <textarea type="text" name="opinion" placeholder="comentario" style="width:500px; height:200px"></textarea>
     <textarea type="text" name="opinion2" placeholder="comentario" style="width:500px; height:200px"></textarea>
   </div>
+  <div><input type="text" name="score" placeholder="punteo"></input></div>
+  <div><input type="number" name="id" placeholder="id"></input></div>
   <br><br>
 
   <br><br>

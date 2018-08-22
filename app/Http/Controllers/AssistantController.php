@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Review;
 use App\Assistant;
+use App\AssistantComment;
 class AssistantController extends Controller
 {
     public function evaluation(){
@@ -12,7 +13,18 @@ class AssistantController extends Controller
         $assistant = Assistant::find($id);
         return view('AuxReview')->with(compact("assistant"));
     }
+
+    /**
+    * @param \Illuminate\Http\Request $request
+    * @return \Illuminate\Http\Response
+    */
     public function savereview(Request $request){
+        $r = new AssistantComment();
+        $r->comment = $request->input('opinion');
+        $r->commentN = $request->input('opinion2');
+        $r->score= $request->input('score');
+        $r->id_assistant= $request->input('id');
+        $r->save();
         return back();
     }
     public function saveEvaluation(Request $request){
