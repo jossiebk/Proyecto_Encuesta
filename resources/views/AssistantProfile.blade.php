@@ -8,12 +8,15 @@
 @endsection
 
 @section('content')
-<div style="background-image: url(img/header.jpg); height: 1250px; width: 1400px;">
+<div style="background-image: url(/img/header.jpg); height: 1250px; width: 1400px;">
 <br>
 <br>
 <br>
 <br>
-<div><h4> Nombre:  {{ $assistant->user->name }} </h4>  </div>
+		
+	  <div class="row align-items-center justify-content-center">
+          <h1 style="color:white;" class="display-4">{{ $assistant->user->name }}</h1>
+      </div>
 
 
 </div>
