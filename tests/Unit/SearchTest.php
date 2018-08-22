@@ -70,7 +70,4 @@ class SearchTest extends TestCase
         $response->assertSuccessful();
     }
 
-
-
-
 }

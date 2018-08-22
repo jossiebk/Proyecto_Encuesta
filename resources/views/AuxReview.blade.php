@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('title', 'Calificacion y Opinio Auxiliar')
+<style>
 
 
-<style type="text/css">
 .ec-stars-wrapper {
   /* Espacio entre los inline-block (los hijos, los `a`) 
      http://ksesocss.blogspot.com/2012/03/display-inline-block-y-sus-empeno-en.html */
@@ -25,7 +25,7 @@
 }
 
 .ec-stars-wrapper:hover a {
-  color: rgb(249, 255, 51);
+  color: rgb(241, 196, 15);
 }
 /*
  * El selector de hijo, es necesario para aumentar la especifidad
@@ -35,15 +35,12 @@
 }
 </style>
 
-
-
-
-<div style="background-image: url(img/header.jpg); height: 950px; width: 1600px;">
+<div style="background-image: url('/img/header.jpg'); height: 950px; width: 1600px;">
 @section('content')
 <br><br><br><br>
   <div><h1>Calificar Auxiliar</h1></div>
   <br><br>
-  <form method="post" action="{{ url('/AuxReview') }}">
+  <form method="post" action="{{ url('/AuxReview/{id}') }}">
   @csrf
   <div>
     <h4>Auxiliar: ################## </h4>  
@@ -57,8 +54,8 @@
 
   </div>
   <div>
-    <textarea type="text" name="opinion" placeholder="comentario" style="width:600px; height:200px"></textarea>
-    <textarea type="text" name="opinion2" placeholder="comentario" style="width:600px; height:200px"></textarea>
+    <textarea type="text" name="opinion" placeholder="comentario" style="width:500px; height:200px"></textarea>
+    <textarea type="text" name="opinion2" placeholder="comentario" style="width:500px; height:200px"></textarea>
   </div>
   <br><br>
 
@@ -66,5 +63,5 @@
   <button >Guardar</button>
   </form>
 </div>
-
+</body>
 @endsection

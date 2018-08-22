@@ -123,59 +123,53 @@
               <input type="number" name="id_course">
               <br>
     <button >Evaluar</button>
-    </div>
-
-    </div>
-
-  <script>
-//      var Rango1 = document.getElementById("R1");
-      function Barra1(Rango,Etiqueta){
-        console.log(Rango.value);
-        console.log(Etiqueta);
-        document.getElementById(Etiqueta).innerHTML ='(' + Rango.value + ')';
-        var Valor = Rango.value;
-      switch(Valor){
-        case '0':
-          Rango.style.backgroundColor ="#e60000";
-          break;
-        case '1':
-          Rango.style.backgroundColor ="#ff4000";
-          break;
-        case '2':
-          Rango.style.backgroundColor ="#ff8000";
-          break;
-        case '3':
-          Rango.style.backgroundColor ="#ffbf00";
-          break;
-        case '4':
-          Rango.style.backgroundColor ="#ffff00";
-          break;
-        case '5':
-          Rango.style.backgroundColor ="#bfff00";
-          break;
-        case '6':
-          Rango.style.backgroundColor ="#80ff00";
-          break;
-        case '7':
-          Rango.style.backgroundColor ="#40ff00";
-          break;
-        case '8':
-          Rango.style.backgroundColor ="#00ff00";
-          break;    
-        case '9':
-          Rango.style.backgroundColor ="#00ff40";
-          break;        
-        case '10':
-          Rango.style.backgroundColor = "#00cc33";
-          break; 
-        default:
-          Rango.className = "slider";
-          break;
-      }}    
-    </script>
-   </form>
+    <script>
+  //      var Rango1 = document.getElementById("R1");
+        function Barra1(Rango,Etiqueta){
+          console.log(Rango.value);
+          console.log(Etiqueta);
+          document.getElementById(Etiqueta).innerHTML ='(' + Rango.value + ')';
+          var Valor = Rango.value;
+        switch(Valor){
+          case '0':
+            Rango.style.backgroundColor ="#e60000";
+            break;
+          case '1':
+            Rango.style.backgroundColor ="#ff4000";
+            break;
+          case '2':
+            Rango.style.backgroundColor ="#ff8000";
+            break;
+          case '3':
+            Rango.style.backgroundColor ="#ffbf00";
+            break;
+          case '4':
+            Rango.style.backgroundColor ="#ffff00";
+            break;
+          case '5':
+            Rango.style.backgroundColor ="#bfff00";
+            break;
+          case '6':
+            Rango.style.backgroundColor ="#80ff00";
+            break;
+          case '7':
+            Rango.style.backgroundColor ="#40ff00";
+            break;
+          case '8':
+            Rango.style.backgroundColor ="#00ff00";
+            break;    
+          case '9':
+            Rango.style.backgroundColor ="#00ff40";
+            break;        
+          case '10':
+            Rango.style.backgroundColor = "#00cc33";
+            break; 
+          default:
+            Rango.className = "slider";
+            break;
+        }}    
+      </script>
+     </form>
   </div>
-
 @section('content')
-
 @endsection
