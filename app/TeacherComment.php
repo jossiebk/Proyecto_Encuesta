@@ -12,7 +12,7 @@ class TeacherComment extends Model
      * @var array
      */
     protected $fillable = [
-        'comment', 'score', 'id_teacher',
+        'comment','commentN', 'score', 'id_teacher',
     ];
 
     //$TeacherComment->teacher (Usuario que realizo la evaluacion)

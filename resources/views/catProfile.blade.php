@@ -2,7 +2,7 @@
 
 
 @section('title', 'Perfil de Catedratico')
-<div style="background-image: url('/img/header.jpg'); height: 1250px; width: 1600px;>
+<div style="background-image: url('/img/header.jpg'); height: 1250px; width: 1600px;">
 
 @section('content')
 	<br><br><br><br><br><br>
@@ -24,9 +24,11 @@
 		<center>
 		<table>
 			<tr>
-				<td><button style="width:250px; height:40px">Calificar</button></td>
-				<td><button style="width:250px; height:40px">Opinar</button></td>
-				<td><button style="width:250px; height:40px">Cursos</button></td>
+				<td<button style="width:250px; height:40px"><a  href="{{url('teacherReview',['id'=>$teacher->id]) }}";>Opinar</a></button></td>
+
+				<td><button style="width:250px; height:40px"><a  href="{{url('teacherReview',['id'=>$teacher->id]) }}";>Opinar</a></button></td>
+				
+				<td><button style="width:250px; height:40px"><a  href="{{url('teacherReview',['id'=>$teacher->id]) }}";>Opinar</a></button></td>
 			</tr>
 		</table>
 	</center>

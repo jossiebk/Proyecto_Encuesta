@@ -16,6 +16,7 @@ class CreateTeacherCommentsTable extends Migration
         Schema::create('teacher_comments', function (Blueprint $table) {
             $table->increments('id');
             $table->text('comment');
+            $table->text('commentN');
             $table->text('score');
             $table->unsignedInteger('id_teacher');
             $table->foreign('id_teacher')->references('id')->on('teachers');

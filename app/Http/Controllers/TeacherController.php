@@ -16,10 +16,12 @@ class TeacherController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-    return view('/teacher/form');
+         $teacher = Teacher::find($id);
+        return view('/teacher/form')->with(compact('teacher'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -103,11 +105,12 @@ class TeacherController extends Controller
         //
     }
 
+
     //Metodo para mostrar el perfil
     public function profile($id){
         $teacher = Teacher::find($id);
         return view('catProfile')->with(compact('teacher'));
-    }
+        }
 
     //metodo para mostrar el area de reseñas y calificaciones
      public function review($id){
@@ -127,6 +130,7 @@ class TeacherController extends Controller
     public function saveReview(Request $request){
         $r = new TeacherComment();
             $r->comment = $request->input('opinion');
+             $r->commentN = $request->input('opinionN');
             $r->score = $request->input('score');
             $r->id_teacher = $request->input('id');
             $r->save();
