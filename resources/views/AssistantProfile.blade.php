@@ -24,7 +24,7 @@
     <br>
     <br>
 	  <div class="row align-items-center justify-content-center">
-          <h1 style="color:white;" class="display-4">{{ $assistant->user->name }}</h1>
+          <h1 style="color:white;" class="display-3">{{ $assistant->user->name }}</h1>
       </div>
       <br>
       <br>
@@ -57,7 +57,7 @@
       <td>{{$assistant->work_experience_3}}</td>
     </tr>
 
-    <tr class="w3-hover-yellow">
+    <tr class="w3-hover-brown">
       <td colspan="1">Referencias</td>
       <td colspan="3">{{$assistant->references}}</td>
     </tr>
@@ -65,7 +65,13 @@
   </tbody>
 </table>
 
-    </div>
 
+<br>
+<div class="row">
+  <div class="col-sm-4"><button type="button" class="btn btn-success btn-block">Calificar</button></div>
+  <div class="col-sm-4"><button type="button" class="btn btn-info btn-block">Opinar</button></div>
+  <div class="col-sm-4"><button type="button" class="btn btn-warning btn-block">Cursos</button></div>
+</div>
+    </div>
 </div>
 @endsection
