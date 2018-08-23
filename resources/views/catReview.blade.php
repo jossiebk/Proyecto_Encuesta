@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('title', 'opinar y calificar')
 <body >
+
 <style type="text/css">
 #form {
   width: 250px;
@@ -13,7 +14,7 @@
 }
 
 #form label {
-  font-size: 20px;
+  font-size: 50px;
 }
 
 input[type="radio"] {
