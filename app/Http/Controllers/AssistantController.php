@@ -22,7 +22,7 @@ class AssistantController extends Controller
         $r = new AssistantComment();
         $r->comment = $request->input('opinion');
         $r->commentN = $request->input('opinion2');
-        $r->score= $request->input('score');
+        $r->score= $request->input('estrellas');
         $r->id_assistant= $request->input('id');
         $r->save();
         return back();
