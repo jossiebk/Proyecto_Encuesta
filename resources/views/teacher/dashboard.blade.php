@@ -55,7 +55,7 @@
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
               <i class="fa fa-4x fa-github-square text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3 btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">Referencia Personal</h3>
+              <h3 class="mb-3 btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal4">Referencia Personal</h3>
               <p class="text-muted mb-0">Ingresa la direccion de tu pagina web o repositorio personal.</p>
             </div>
           </div>
@@ -131,6 +131,37 @@
 	        <div class="form-group">
 		        <label for="recipient-name" class="col-form-label">Puesto en antepenultimo empleo:</label>
 		        <input type="text" class="form-control" name="work3">
+	        </div>
+            <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+		        <button type="submit" class="btn btn-primary">Guardar</button>
+      		</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Referencia personal -->
+<div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ingrese su informacion laboral</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="{{ url('/teacher/dashboard/reference') }}">
+        	@csrf
+        	<div class="form-group">
+		        <label for="recipient-name" class="col-form-label">Id de catedratico:</label>
+		        <input type="number" class="form-control" name="id" required>
+	        </div>
+        	<div class="form-group">
+		        <label for="recipient-name" class="col-form-label">Pagina personal o repositorio:</label>
+		        <input type="url" class="form-control" name="reference1" required>
 	        </div>
             <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

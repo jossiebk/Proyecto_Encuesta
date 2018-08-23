@@ -176,4 +176,21 @@ class TeacherController extends Controller
 
     }
 
+    //Metodo que almacena/actualiza la informacion laboral del catedratico
+    public function reference(Request $request){
+        $teacher = Teacher::find($request->input('id'));
+        if($teacher == null){
+            $alert = 'Alerta! No existe el profesor, por favor verifica tu informacion';
+            return back()->with(compact('alert'));
+        }
+
+        $teacher->references = !empty($request->input('reference1')) ? $request->input('reference1') : $teacher->references; 
+
+        $teacher->save();
+
+        $message = 'Referencia personal ingresada correctamente!';
+        return back()->with(compact('message')) ;
+
+    }
+
 }

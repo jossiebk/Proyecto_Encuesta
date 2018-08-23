@@ -54,4 +54,6 @@ Route::get('/teacher/dashboard', 'TeacherController@dashboard');
 Route::post('/teacher/dashboard/titles', 'TeacherController@titles');
 //Ruta para almacenar/actualizar informacion laboral
 Route::post('/teacher/dashboard/works', 'TeacherController@works');
+//Ruta para almacenar/actualizar referencia personal
+Route::post('/teacher/dashboard/reference', 'TeacherController@reference');
 
