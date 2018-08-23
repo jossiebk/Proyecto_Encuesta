@@ -131,7 +131,7 @@ class TeacherController extends Controller
         $r = new TeacherComment();
             $r->comment = $request->input('opinion');
              $r->commentN = $request->input('opinionN');
-            $r->score = $request->input('score');
+            $r->score = $request->input('estrellas');
             $r->id_teacher = $request->input('id');
             $r->save();
         return back();

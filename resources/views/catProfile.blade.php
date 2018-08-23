@@ -18,17 +18,16 @@
 	<div><h4>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. {{$teacher->work_experience_1}}</h4></div>
 	<div><h4>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. {{$teacher->work_experience_1}}</h4></div>
 	<div><h4> Referencias: {{$teacher->references}}</h4></div>
-
 		<br><br><br>
 	<div>
 		<center>
 		<table>
 			<tr>
-				<td<button style="width:250px; height:40px"><a  href="{{url('teacherReview',['id'=>$teacher->id]) }}";>Opinar</a></button></td>
+				<td><button style="width:250px; height:40px"><a  href="{{url('teacher_form',['id'=>$teacher->id]) }}";>Encuesta</a></button></td>
 
-				<td><button style="width:250px; height:40px"><a  href="{{url('teacherReview',['id'=>$teacher->id]) }}";>Opinar</a></button></td>
+				<td><button style="width:250px; height:40px"><a  href="{{url('teacherReview',['id'=>$teacher->id]) }}"; >Opinar</a></button></td>
 				
-				<td><button style="width:250px; height:40px"><a  href="{{url('teacherReview',['id'=>$teacher->id]) }}";>Opinar</a></button></td>
+				<td><button style="width:250px; height:40px"><a  href="{{url('ProfileCourse',['id'=>$teacher->id]) }}";>Cursos</a></button></td>
 			</tr>
 		</table>
 	</center>
