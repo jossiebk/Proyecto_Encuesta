@@ -48,6 +48,10 @@ Route::get('/teacherReview/{id}', 'TeacherController@review');
 
 Route::post('/teacherReview/{id}', 'TeacherController@saveReview');
 
+//Ruta para el dashboard del catedratico
 Route::get('/teacher/dashboard', 'TeacherController@dashboard');
-
+//Ruta para almacenar/actualizar informacion academica
+Route::post('/teacher/dashboard/titles', 'TeacherController@titles');
+//Ruta para almacenar/actualizar informacion laboral
+Route::post('/teacher/dashboard/works', 'TeacherController@works');
 

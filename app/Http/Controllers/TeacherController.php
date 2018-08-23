@@ -133,8 +133,47 @@ class TeacherController extends Controller
         return back();
     }
 
+    //Metodo que retorna la vista al dashboard del catedratico
     public function dashboard(){
         return view('teacher.dashboard');
+    }
+
+    //Metodo que almacena/actualiza la informacion academica del catedratico
+    public function titles(Request $request){
+        $teacher = Teacher::find($request->input('id'));
+        if($teacher == null){
+            $alert = 'Alerta! No existe el profesor, por favor verifica tu informacion';
+            return back()->with(compact('alert'));
+        }
+
+        $teacher->academic_title_1 = !empty($request->input('title1')) ? $request->input('title1') : $teacher->academic_title_1; 
+        $teacher->academic_title_2 = !empty($request->input('title2')) ? $request->input('title2') : $teacher->academic_title_2; 
+        $teacher->academic_title_3 = !empty($request->input('title3')) ? $request->input('title3') : $teacher->academic_title_3;
+
+        $teacher->save();
+
+        $message = 'Informacion academica ingresada correctamente!';
+        return back()->with(compact('message')) ;
+
+    }
+
+    //Metodo que almacena/actualiza la informacion laboral del catedratico
+    public function works(Request $request){
+        $teacher = Teacher::find($request->input('id'));
+        if($teacher == null){
+            $alert = 'Alerta! No existe el profesor, por favor verifica tu informacion';
+            return back()->with(compact('alert'));
+        }
+
+        $teacher->work_experience_1 = !empty($request->input('work1')) ? $request->input('work1') : $teacher->work_experience_1; 
+        $teacher->work_experience_2 = !empty($request->input('work2')) ? $request->input('work2') : $teacher->work_experience_2; 
+        $teacher->work_experience_3 = !empty($request->input('work3')) ? $request->input('work3') : $teacher->work_experience_3;
+
+        $teacher->save();
+
+        $message = 'Informacion laboral ingresada correctamente!';
+        return back()->with(compact('message')) ;
+
     }
 
 }
