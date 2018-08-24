@@ -110,6 +110,12 @@ class TeacherController extends Controller
     }
 
     //metodo para mostrar el area de reseñas y calificaciones
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
      public function review($id){
         $teacher = Teacher::find($id);
         return view('catReview')->with(compact('teacher'));
@@ -129,6 +135,8 @@ class TeacherController extends Controller
             $r->comment = $request->input('opinion');
             $r->score = $request->input('score');
             $r->id_teacher = $request->input('id');
+            $r->updated_at="2018-08-15 23:35:55";
+            $r->created_at="2018-08-15 23:35:55";
             $r->save();
         return back();
     }

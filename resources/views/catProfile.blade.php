@@ -25,7 +25,7 @@
 		<table>
 			<tr>
 				<td><button style="width:250px; height:40px">Calificar</button></td>
-				<td><button style="width:250px; height:40px">Opinar</button></td>
+				<td><button style="width:250px; height:40px" action="{{ url('/teacherReview/1') }}">Opinar</button></td>
 				<td><button style="width:250px; height:40px">Cursos</button></td>
 			</tr>
 		</table>
