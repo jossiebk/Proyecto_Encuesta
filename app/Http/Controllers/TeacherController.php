@@ -39,13 +39,15 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
+        //var_dump($request->input('R5'));
+        //dd($request);
         $r = new Review();
 
-            $r->puntuality = $request->input('P1');
-            $r->knowledge = $request->input('P2');
-            $r->presentation = $request->input('P3');;
-            $r->notes = $request->input('P4');
-            $r->assistance = $request->input('P5');
+            $r->puntuality = $request->input('R1');
+            $r->knowledge = $request->input('R2');
+            $r->presentation = $request->input('R3');;
+            $r->notes = $request->input('R4');
+            $r->assistance = $request->input('R5');
             if(empty($request->input('comment'))){
             $r->comment = 'NO COMENT';
             }else{
