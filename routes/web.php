@@ -62,4 +62,5 @@ Route::post('/teacher/dashboard/works', 'TeacherController@works');
 //Ruta para almacenar/actualizar referencia personal
 Route::post('/teacher/dashboard/reference', 'TeacherController@reference');
 
-
+// ruta para perfil del auxiliar
+Route::get('/assistantProfile/{id}', 'AssistantController@profile');
