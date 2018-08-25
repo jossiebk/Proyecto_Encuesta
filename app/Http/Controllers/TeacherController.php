@@ -141,4 +141,108 @@ class TeacherController extends Controller
         return back();
     }
 
+    //Metodo que retorna la vista al dashboard del catedratico
+    public function dashboard(){
+        //Inyecto las reviews de un catedratico por defecto ya que aun no tenemos login
+        $rating = $this->getAverageOfAllReviews();
+        return view('teacher.dashboard')->with(compact('rating'));
+    }
+
+    //Metodo que almacena/actualiza la informacion academica del catedratico
+    public function titles(Request $request){
+        $teacher = Teacher::find($request->input('id'));
+        if($teacher == null){
+            $alert = 'Alerta! No existe el profesor, por favor verifica tu informacion';
+            return back()->with(compact('alert'));
+        }
+
+        $teacher->academic_title_1 = !empty($request->input('title1')) ? $request->input('title1') : $teacher->academic_title_1; 
+        $teacher->academic_title_2 = !empty($request->input('title2')) ? $request->input('title2') : $teacher->academic_title_2; 
+        $teacher->academic_title_3 = !empty($request->input('title3')) ? $request->input('title3') : $teacher->academic_title_3;
+
+        $teacher->save();
+
+        $message = 'Informacion academica ingresada correctamente!';
+        return back()->with(compact('message')) ;
+
+    }
+
+    //Metodo que almacena/actualiza la informacion laboral del catedratico
+    public function works(Request $request){
+        $teacher = Teacher::find($request->input('id'));
+        if($teacher == null){
+            $alert = 'Alerta! No existe el profesor, por favor verifica tu informacion';
+            return back()->with(compact('alert'));
+        }
+
+        $teacher->work_experience_1 = !empty($request->input('work1')) ? $request->input('work1') : $teacher->work_experience_1; 
+        $teacher->work_experience_2 = !empty($request->input('work2')) ? $request->input('work2') : $teacher->work_experience_2; 
+        $teacher->work_experience_3 = !empty($request->input('work3')) ? $request->input('work3') : $teacher->work_experience_3;
+
+        $teacher->save();
+
+        $message = 'Informacion laboral ingresada correctamente!';
+        return back()->with(compact('message')) ;
+
+    }
+
+    //Metodo que almacena/actualiza la informacion laboral del catedratico
+    public function reference(Request $request){
+        $teacher = Teacher::find($request->input('id'));
+        if($teacher == null){
+            $alert = 'Alerta! No existe el profesor, por favor verifica tu informacion';
+            return back()->with(compact('alert'));
+        }
+
+        $teacher->references = !empty($request->input('reference1')) ? $request->input('reference1') : $teacher->references; 
+
+        $teacher->save();
+
+        $message = 'Referencia personal ingresada correctamente!';
+        return back()->with(compact('message')) ;
+
+    }
+
+    //Metoto para obtener las evaluaciones de un catedratico
+    public function getTeacherReviews($id_teacher)
+    {
+        $teacher = Teacher::find($id_teacher);
+
+        $reviews = Review::where('id_user_evaluated', $teacher->user->id)->get();
+        return $reviews;
+
+    }
+
+    //Metodo para obtener el promedio de todas las evaluaciones de un catedratico
+    public function getAverageOfAllReviews()
+    {
+        $reviews = $this->getTeacherReviews(1);
+        $puntuality = 0;
+        $knowledge = 0;
+        $presentation = 0;
+        $notes = 0;
+        $assistance = 0;
+        foreach($reviews as $review)
+        {
+            $puntuality = $puntuality + $review->puntuality;
+            $knowledge = $knowledge + $review->knowledge;
+            $presentation = $presentation + $review->presentation;
+            $notes = $notes + $review->presentation;
+            $assistance = $assistance + $review->assistance;
+        }
+
+        $totalReviews = $reviews->count();
+
+        $rating = [
+            "puntuality" => Round($puntuality/$totalReviews, 2),
+            "knowledge" => Round($knowledge/$totalReviews, 2),
+            "presentation" => Round($presentation/$totalReviews, 2),
+            "notes" => Round($notes/$totalReviews, 2),
+            "assistance" => Round($assistance/$totalReviews, 2),
+            "reviewsCount" => $reviews->count(),
+        ];
+
+        return $rating;
+    }
+
 }

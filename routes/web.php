@@ -51,6 +51,15 @@ Route::post('/teacherReview/{id}', 'TeacherController@saveReview');
 //ruta para obtener top 10 de catedraticos en general
 Route::get('/Reports/Top10General','Reports@Top10General');
 
-
 Route::get('/AuxReview', 'AssistantController@reviewAux');
+
+//Ruta para el dashboard del catedratico
+Route::get('/teacher/dashboard', 'TeacherController@dashboard');
+//Ruta para almacenar/actualizar informacion academica
+Route::post('/teacher/dashboard/titles', 'TeacherController@titles');
+//Ruta para almacenar/actualizar informacion laboral
+Route::post('/teacher/dashboard/works', 'TeacherController@works');
+//Ruta para almacenar/actualizar referencia personal
+Route::post('/teacher/dashboard/reference', 'TeacherController@reference');
+
 
