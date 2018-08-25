@@ -135,7 +135,9 @@ class TeacherController extends Controller
 
     //Metodo que retorna la vista al dashboard del catedratico
     public function dashboard(){
-        return view('teacher.dashboard');
+        //Inyecto las reviews de un catedratico por defecto ya que aun no tenemos login
+        $rating = $this->getAverageOfAllReviews();
+        return view('teacher.dashboard')->with(compact('rating'));
     }
 
     //Metodo que almacena/actualiza la informacion academica del catedratico
@@ -191,6 +193,48 @@ class TeacherController extends Controller
         $message = 'Referencia personal ingresada correctamente!';
         return back()->with(compact('message')) ;
 
+    }
+
+    //Metoto para obtener las evaluaciones de un catedratico
+    public function getTeacherReviews($id_teacher)
+    {
+        $teacher = Teacher::find($id_teacher);
+
+        $reviews = Review::where('id_user_evaluated', $teacher->user->id)->get();
+        return $reviews;
+
+    }
+
+    //Metodo para obtener el promedio de todas las evaluaciones de un catedratico
+    public function getAverageOfAllReviews()
+    {
+        $reviews = $this->getTeacherReviews(1);
+        $puntuality = 0;
+        $knowledge = 0;
+        $presentation = 0;
+        $notes = 0;
+        $assistance = 0;
+        foreach($reviews as $review)
+        {
+            $puntuality = $puntuality + $review->puntuality;
+            $knowledge = $knowledge + $review->knowledge;
+            $presentation = $presentation + $review->presentation;
+            $notes = $notes + $review->presentation;
+            $assistance = $assistance + $review->assistance;
+        }
+
+        $totalReviews = $reviews->count();
+
+        $rating = [
+            "puntuality" => Round($puntuality/$totalReviews, 2),
+            "knowledge" => Round($knowledge/$totalReviews, 2),
+            "presentation" => Round($presentation/$totalReviews, 2),
+            "notes" => Round($notes/$totalReviews, 2),
+            "assistance" => Round($assistance/$totalReviews, 2),
+            "reviewsCount" => $reviews->count(),
+        ];
+
+        return $rating;
     }
 
 }

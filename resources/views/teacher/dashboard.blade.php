@@ -48,13 +48,13 @@
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
               <i class="fa fa-4x fa-balance-scale text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3 btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">Mis Evaluaciones</h3>
+              <h3 class="mb-3 btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal3">Mis Evaluaciones</h3>
               <p class="text-muted mb-0">Resumen de las valoraciones de los usuarios.</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-github-square text-primary mb-3 sr-icons"></i>
+              <i class="fa fa-4x fa-user text-primary mb-3 sr-icons"></i>
               <h3 class="mb-3 btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal4">Referencia Personal</h3>
               <p class="text-muted mb-0">Ingresa la direccion de tu pagina web o repositorio personal.</p>
             </div>
@@ -132,11 +132,121 @@
 		        <label for="recipient-name" class="col-form-label">Puesto en antepenultimo empleo:</label>
 		        <input type="text" class="form-control" name="work3">
 	        </div>
-            <div class="modal-footer">
+          <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 		        <button type="submit" class="btn btn-primary">Guardar</button>
       		</div>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Evaluaciones -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Resultado de sus evaluaciones</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+            <div class="placeholder">
+              <span class="small">Puntualidad: {{ $rating['puntuality'] }}</span>
+            </div> 
+
+            <div class="overlay" >           
+                @while($rating['puntuality'] > 0)
+                    @if($rating['puntuality'] >= 1)
+                        <i class="fas fa-star"></i>
+                    @else
+                        <i class="fas fa-star-half"></i>
+                    @endif
+                    @php $rating['puntuality']--; @endphp
+                @endwhile
+            </div>
+
+            <br>
+
+            <div class="placeholder">
+              <span class="small">Dominio de los temas: {{ $rating['knowledge'] }}</span>
+            </div> 
+
+            <div class="overlay" >           
+                @while($rating['knowledge'] > 0)
+                    @if($rating['knowledge'] >= 1)
+                        <i class="fas fa-star"></i>
+                    @else
+                        <i class="fas fa-star-half"></i>
+                    @endif
+                    @php $rating['knowledge']--; @endphp
+                @endwhile
+            </div>
+
+            <br>
+
+            <div class="placeholder">
+              <span class="small">Presentacion: {{ $rating['presentation'] }}</span>
+            </div> 
+
+            <div class="overlay" >           
+                @while($rating['presentation'] > 0)
+                    @if($rating['presentation'] >= 1)
+                        <i class="fas fa-star"></i>
+                    @else
+                        <i class="fas fa-star-half"></i>
+                    @endif
+                    @php $rating['presentation']--; @endphp
+                @endwhile
+            </div>
+
+            <br>
+
+            <div class="placeholder">
+              <span class="small">Entrega de notas: {{ $rating['notes'] }}</span>
+            </div> 
+
+            <div class="overlay" >           
+                @while($rating['notes'] > 0)
+                    @if($rating['notes'] >= 1)
+                        <i class="fas fa-star"></i>
+                    @else
+                        <i class="fas fa-star-half"></i>
+                    @endif
+                    @php $rating['notes']--; @endphp
+                @endwhile
+            </div>
+
+            <br>
+
+            <div class="placeholder">
+              <span class="small">Asistencia: {{ $rating['assistance'] }}</span>
+            </div> 
+
+            <div class="overlay" >           
+                @while($rating['assistance'] > 0)
+                    @if($rating['assistance'] >= 1)
+                        <i class="fas fa-star"></i>
+                    @else
+                        <i class="fas fa-star-half"></i>
+                    @endif
+                    @php $rating['assistance']--; @endphp
+                @endwhile
+            </div>
+        
+      </div>
+
+      <div class="modal-body">
+        <div class="service-box"> 
+           <p class="text-muted mb-0">Evaluaciones: {{ $rating['reviewsCount'] }}</p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
       </div>
     </div>
   </div>
