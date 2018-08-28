@@ -40,7 +40,7 @@ Route::post('/teacher_form/evaluate','TeacherController@store');
 // ruta para perfil del catedratico
 Route::get('/perCat/{id}', 'TeacherController@profile');
 
-// ruta para perfil obtener cursos del catedratico
+// ruta para obtener cursos del catedratico
 Route::get('/ProfileCourse/{id}', 'CourseController@course_teacher_by_id_teacher');
 
 //ruta para obtener el area para calificar catedraticos
@@ -48,4 +48,21 @@ Route::get('/teacherReview/{id}', 'TeacherController@review');
 
 Route::post('/teacherReview/{id}', 'TeacherController@saveReview');
 
+//ruta para obtener top 10 de catedraticos en general
+Route::get('/Reports/Top10General','Reports@Top10General');
 
+//Ruta para el dashboard del catedratico
+Route::get('/teacher/dashboard', 'TeacherController@dashboard');
+//Ruta para almacenar/actualizar informacion academica
+Route::post('/teacher/dashboard/titles', 'TeacherController@titles');
+//Ruta para almacenar/actualizar informacion laboral
+Route::post('/teacher/dashboard/works', 'TeacherController@works');
+//Ruta para almacenar/actualizar referencia personal
+Route::post('/teacher/dashboard/reference', 'TeacherController@reference');
+
+// ruta para perfil del auxiliar
+Route::get('/assistantProfile/{id}', 'AssistantController@profile');
+
+Route::get('/AuxReview/{id}', 'AssistantController@reviewAux');
+
+Route::post('/AuxReview/{id}', 'AssistantController@saveReview');

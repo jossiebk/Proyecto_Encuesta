@@ -16,8 +16,8 @@ class TeacherFormTest extends TestCase
     public function TeacherFormTest()
     {
 
-    $response = $this->json('POST','/teacher_form/evaluate', ['P1' => '1','P2' => '1','P3' => '1','P4' => '1','P5' => '1','comment' => 'PHPUNIT_5']);
-        $this->assertDatabaseHas('reviews', ['comment' => 'PHPUNIT_5']);
+    $response = $this->json('POST','/teacher_form/evaluate', ['R1' => '4','R2' => '7','R3' => '3','R4' => '6','R5' => '10','comment' => '8/21/2018']);
+        $this->assertDatabaseHas('reviews', ['comment' => '8/21/2018']);
 
     }
 }
