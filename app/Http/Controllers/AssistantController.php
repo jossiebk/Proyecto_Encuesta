@@ -40,4 +40,9 @@ class AssistantController extends Controller
         $r->save();
         return back();
     }
+        //Metodo para mostrar el perfil
+    public function profile($id){
+        $assistant = Assistant::find($id);
+        return view('AssistantProfile')->with(compact('assistant'));
+    }
 }
