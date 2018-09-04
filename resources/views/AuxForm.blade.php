@@ -122,16 +122,14 @@
               <br>
               <input type="number" name="id_course">
               <br>
-<<<<<<< HEAD
               <button >Evaluar</button>
             </form>
           </div>
         </div>
       </div>
     </section>
-=======
+
     <button >Evaluar</button>
->>>>>>> aux_review
     <script>
   //      var Rango1 = document.getElementById("R1");
         function Barra1(Rango,Etiqueta){
