@@ -68,10 +68,13 @@
 
 <br>
 <div class="row">
-  <div class="col-sm-4"><button type="button" class="btn btn-success btn-block">Calificar</button></div>
+  <div class="col-sm-4"><button type="button" class="btn btn-success btn-block"><a  href="{{url('formAux',['id'=>$assistant->id]) }}";>Calificar</a></button></div>
+
+
   <div class="col-sm-4"><button type="button" class="btn btn-info btn-block">Opinar</button></div>
   <div class="col-sm-4"><button type="button" class="btn btn-warning btn-block">Cursos</button></div>
 </div>
     </div>
 </div>
 @endsection
+

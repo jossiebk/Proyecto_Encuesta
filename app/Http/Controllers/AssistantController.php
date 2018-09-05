@@ -6,9 +6,14 @@ use App\Assistant;
 use App\AssistantComment;
 class AssistantController extends Controller
 {
-    public function evaluation(){
-        return view('AuxForm');
+    public function evaluation($id){
+          $assistant = Assistant::find($id);
+        return view('AuxForm')->with(compact("assistant"));
+        
     }
+
+
+
     public function ReviewAux($id){
         $assistant = Assistant::find($id);
         return view('AuxReview')->with(compact("assistant"));
@@ -35,7 +40,7 @@ class AssistantController extends Controller
         $r->assistance = $request->input('p5');
         $r->comment = $request->input('comment');
         $r->id_user_evaluator = $request->input('id_user_evaluator');
-        $r->id_user_evaluated = $request->input('id_user_evaluated');
+        $r->id_user_evaluated = $request->input('id');
         $r->id_course = $request->input('id_course');
         $r->save();
         return back();

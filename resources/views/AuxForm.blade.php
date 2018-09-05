@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Encuesta Auxiliar')
-<div style="background-image: url(img/header.jpg); height: 1550px; width: 1400px;">
+<div style="background-image: url('/img/header.jpg'); height: 1550px; width: 1400px;">
 <style type="text/css">
   .slider{
     -webkit-appearance: none;
