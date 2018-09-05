@@ -15,6 +15,7 @@ class TestTop10AuxGeneral extends TestCase
      */
     public function testExample()
     {
-        $this->assertTrue(true);
+        $this->get('/Reports/Top10AssistantGeneral')
+        ->assertStatus(200);
     }
 }
