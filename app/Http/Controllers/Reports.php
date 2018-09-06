@@ -20,4 +20,8 @@ class Reports extends Controller
     		]);
     	
     }
+
+    public function Top10AssisPerSchool(){
+        return view('/Reports/Top10AssistantPerSchool');
+    }
 }
