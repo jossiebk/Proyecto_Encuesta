@@ -13,9 +13,26 @@ class TopTeacherPerSchoolTest extends TestCase
      * @test
      * @return void
      */
-    public function testExample()
+    public function testPrueba1_a()
     {
     	$this->assertDatabaseHas('schools', ['name' => 'Ciencias y Sistemas']);
+    }
+        public function testPrueba1_b()
+    {
     	$this->assertDatabaseHas('schools', ['name' => 'Ciencias']);
+    }
+        public function testPrueba1_c()
+    {
+    	$this->assertDatabaseHas('schools', ['name' => 'Postgrado']);
+    }
+        public function testPrueba1_d()
+    {
+    	$this->assertDatabaseHas('schools', ['name' => 'Quimica']);
+    }
+
+    	public function testPaginaTop()
+    {
+    	$this->get('/TopTeacherPerSchool')
+    		->assertStatus(200);
     }
 }
