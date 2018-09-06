@@ -63,8 +63,8 @@ class TopTeacherPerSchoolTest extends TestCase
      */
     	public function VerPagina()
     {
-		$response =	 $this->visit('TopTeacherPerSchool')
-             ->see('CATEDRATICOS POR ESCUELA');
-
+    	$response = $this->get('/TopTeacherPerSchool');
+        $response->assertSee('TOP 10 CATEDRATICOS POR ESCUELA');
+        $response->assertSuccessful();
     }
 }
