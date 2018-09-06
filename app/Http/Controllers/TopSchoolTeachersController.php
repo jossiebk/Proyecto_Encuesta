@@ -14,6 +14,7 @@ class TopSchoolTeachersController extends Controller
     public function index()
     {
         //
+        return view('/teacher/topteacherperschool');
     }
 
     /**
