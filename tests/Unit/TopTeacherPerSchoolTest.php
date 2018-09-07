@@ -67,4 +67,18 @@ class TopTeacherPerSchoolTest extends TestCase
         $response->assertSee('TOP 10 CATEDRATICOS POR ESCUELA');
         $response->assertSuccessful();
     }
+
+    /**
+     * A basic test example.
+     * @test
+     * @return void
+     */
+    public function generate_top_success()
+    {
+        $response = $this->json('GET',  '/Generate_Top', ['school_name' => 'Ciencias y Sistemas']);
+        $response->assertViewIs('/teacher/show_top');
+        $response->assertSee('Resultados de busqueda');
+        $response->assertSee('Catedratico1');
+        $response->assertSuccessful();
+    }    
 }

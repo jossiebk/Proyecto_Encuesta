@@ -17,7 +17,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Nombre:</span>
             </div>
-            <input type="text" class="form-control" placeholder="Escuela a buscar..." aria-label="Nombre a buscar..." aria-describedby="basic-addon1" name="user_name">
+            <input type="text" class="form-control" placeholder="Escuela a buscar..." aria-label="Nombre a buscar..." aria-describedby="basic-addon1" name="school_name">
           </div>
           @if ($errors->any())
             <div >
