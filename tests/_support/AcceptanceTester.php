@@ -49,4 +49,13 @@ class AcceptanceTester extends \Codeception\Actor
          $this->amOnPage('/dash');
          $this->SeeResponseCodeIs(200);
      }
+
+      /**
+     * @When I am on the teacher page
+     */
+     public function iAmOnTheTeacherPage()
+     {
+         $this->amOnPage('/perCat/1');
+         $this->SeeResponseCodeIs(200);
+     }
 }
