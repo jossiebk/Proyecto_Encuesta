@@ -40,4 +40,13 @@ class AcceptanceTester extends \Codeception\Actor
      {
          $this->see($arg1);
      }
+
+    /**
+     * @When I am on the page student dashboard
+     */
+     public function iAmOnThePageStudentDashboard()
+     {
+         $this->amOnPage('/dash');
+         $this->SeeResponseCodeIs(200);
+     }
 }
