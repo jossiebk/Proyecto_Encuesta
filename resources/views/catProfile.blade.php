@@ -6,7 +6,9 @@
 
 @section('content')
 	<br><br><br><br><br><br>
-	<div><h1>perfil de catedratico</h1></div>
+	<div class="row align-items-center justify-content-center">
+          <h1 style="color:white;" class="display-3">Perfil de catedratico</h1>
+      </div>
 	<br><br>
 	<div><h4> Nombre:  {{ $teacher->user->name }} </h4>  </div>
 	<div><h4> Fecha de Nacimiento: {{ $teacher->birthdate }} </h4></div>
