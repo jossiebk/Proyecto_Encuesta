@@ -29,6 +29,9 @@ class CreateAssistantsTable extends Migration
             //Llave foranea
             $table->unsignedInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users');
+            //Llave foranea a escuela
+            $table->unsignedInteger('id_school');
+            $table->foreign('id_school')->references('id')->on('schools');
             $table->timestamps();
         });
     }
