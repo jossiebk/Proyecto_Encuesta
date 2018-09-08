@@ -96,4 +96,19 @@ class TopTeacherPerSchoolTest extends TestCase
         $response->assertSee('Reporte No Generado');
         $response->assertSuccessful();
     }    
+
+
+        /**
+     * A basic test example.
+     * @test
+     * @return void
+     */
+    public function generate_top_position_change()
+    {
+        $response = $this->json('GET',  '/Generate_Top', ['school_name' => 'Ciencias']);
+        $response->assertViewIs('teacher.show_top');
+        $response->assertSee('Resultados de Reporte');
+        $response->assertSee('4. Prof. Calista Strosin');
+        $response->assertSuccessful();
+    }       
 }
