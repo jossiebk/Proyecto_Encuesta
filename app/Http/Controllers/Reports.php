@@ -21,21 +21,6 @@ class Reports extends Controller
     	
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public function Top10AuxGeneral(Request $request){
         $consulta = \DB::table('reviews as r')
         ->join('assistants as a', 'r.id', '=', 'a.id')
