@@ -17,31 +17,6 @@
         <h5 class="card-title">Los 10 auxiliares por escuela mejor calificados son:</h5>
       </div>
 
-        <form method="GET" action="{{ url('/Top10AssistantPerSchool/Top_Generado') }}">
-          @csrf
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Escuela:</span>
-            </div>
-        <select class="form-control form-control-lg" name="school_name">
-                @if($escuelas !=null)
-      @forelse($escuelas as $esc)
-            @if($esc->name != null )
-            
-        <option>{{ $esc->name}} </option>
-            @endif
-             @empty
-        <option>Escuelas no encontradas</option>>
-            @endforelse
-      </select>
-      @endif
- 
-          </div>
-          <input class="btn btn-light btn-xl" type="submit" value="Buscar!"></input>
-        </form>
-
-
-
           @if(isset($consulta) && count($consulta) > 0)
             <center>
               <table>

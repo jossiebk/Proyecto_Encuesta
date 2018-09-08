@@ -10,7 +10,7 @@ class Top10AssistantPerSchool extends TestCase
 {
     /**
      * A basic test example.
-     *
+     * @test
      * @return void
      */
     public function testExample()

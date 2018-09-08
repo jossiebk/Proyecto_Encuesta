@@ -67,4 +67,6 @@ Route::get('/AuxReview/{id}', 'AssistantController@reviewAux');
 
 Route::post('/AuxReview/{id}', 'AssistantController@saveReview');
 //ruta para Top10 de Auxiliares por Curso
-Route::get('/Top10AssistantPerSchool', 'Reports@Top10AssisPerSchool');
+Route::get('/Top10AssistantPerSchool', 'Reports@School');
+//ruta para top generado
+Route::get('/Top10AssistantPerSchool/Top_Generado', 'Reports@Top10AssisPerSchool');
