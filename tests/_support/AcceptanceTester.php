@@ -50,12 +50,43 @@ class AcceptanceTester extends \Codeception\Actor
          $this->SeeResponseCodeIs(200);
      }
 
+
       /**
-     * @When I am on the teacher page
+     * @When I am on the teacher profile :arg1 it must exist
      */
-     public function iAmOnTheTeacherPage()
+     public function iAmOnTheTeacherProfileItMustExist($num1)
      {
-         $this->amOnPage('/perCat/1');
+         $this->amOnPage("/perCat/$num1");
          $this->SeeResponseCodeIs(200);
      }
+
+    /**
+     * @Then I should be able to redirect to the qualify area
+     */
+     public function iShouldBeAbleToRedirectToTheQualifyArea()
+     {
+         $this->amOnPage('/teacherReview/1');
+         $this->SeeResponseCodeIs(200);
+     }
+
+    /**
+     * @Then I should be able to redirect to the survey area
+     */
+     public function iShouldBeAbleToRedirectToTheSurveyArea()
+     {
+         $this->amOnPage('/teacher_form/1');
+         $this->SeeResponseCodeIs(200);
+     }
+
+    /**
+     * @Then I should be able to redirect to the assigned courses area
+     */
+     public function iShouldBeAbleToRedirectToTheAssignedCoursesArea()
+     {
+         $this->amOnPage('/ProfileCourse/1');
+         $this->SeeResponseCodeIs(200);
+     }
+
+
+
 }
