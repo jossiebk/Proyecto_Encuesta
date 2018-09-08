@@ -80,5 +80,20 @@ class TopTeacherPerSchoolTest extends TestCase
         $response->assertSee('Resultados de busqueda');
         $response->assertSee('1. Anastasia Blick');
         $response->assertSuccessful();
+    }   
+
+
+        /**
+     * A basic test example.
+     * @test
+     * @return void
+     */
+    public function generate_top_nothing()
+    {
+        $response = $this->json('GET',  '/Generate_Top', ['school_name' => 'Ciencias']);
+        $response->assertViewIs('teacher.show_top');
+        $response->assertSee('Resultados de Reporte');
+        $response->assertSee('No Reporte Generado');
+        $response->assertSuccessful();
     }    
 }
