@@ -75,10 +75,10 @@ class TopTeacherPerSchoolTest extends TestCase
      */
     public function generate_top_success()
     {
-        $response = $this->json('GET',  '/Generate_Top', ['school_name' => 'Ciencias y Sistemas']);
-        $response->assertViewIs('/teacher/show_top');
+        $response = $this->json('GET',  '/Generate_Top', ['school_name' => 'Miss Kenya Doyle']);
+        $response->assertViewIs('teacher.show_top');
         $response->assertSee('Resultados de busqueda');
-        $response->assertSee('Catedratico1');
+        $response->assertSee('1. Anastasia Blick');
         $response->assertSuccessful();
     }    
 }

@@ -70,5 +70,6 @@ Route::post('/AuxReview/{id}', 'AssistantController@saveReview');
 //routes for top teacher per school 
 Route::get('/TopTeacherPerSchool','TopSchoolTeachersController@index');
 
+Route::get('/Generate_Top', 'TopSchoolTeachersController@show');
 
 //
