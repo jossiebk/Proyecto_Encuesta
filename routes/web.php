@@ -66,3 +66,10 @@ Route::get('/assistantProfile/{id}', 'AssistantController@profile');
 Route::get('/AuxReview/{id}', 'AssistantController@reviewAux');
 
 Route::post('/AuxReview/{id}', 'AssistantController@saveReview');
+
+//routes for top teacher per school 
+Route::get('/TopTeacherPerSchool','TopSchoolTeachersController@index');
+
+Route::get('/Generate_Top', 'TopSchoolTeachersController@show');
+
+//
