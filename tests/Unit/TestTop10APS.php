@@ -6,17 +6,15 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class Top10AssistantPerSchool extends TestCase
+class TestTop10APS extends TestCase
 {
     /**
      * A basic test example.
-     * @test
+     *
      * @return void
      */
-    public function testTop10TestBase()
+    public function testExample()
     {
-        $this->assert(true);
-     //$this->assertDatabaseHas('schools', ['name' => 'Mylene Berge']);
+        $this->assertTrue(true);
     }
 }
-    
