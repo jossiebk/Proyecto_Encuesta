@@ -105,10 +105,10 @@ class TopTeacherPerSchoolTest extends TestCase
      */
     public function generate_top_position_change()
     {
-        $response = $this->json('GET',  '/Generate_Top', ['school_name' => 'Ciencias']);
+        $response = $this->json('GET',  '/Generate_Top', ['school_name' => 'Miss Kenya Doyle']);
         $response->assertViewIs('teacher.show_top');
         $response->assertSee('Resultados de Reporte');
-        $response->assertSee('4. Prof. Calista Strosin');
+        $response->assertSee('2. Prof. Calista Strosin');
         $response->assertSuccessful();
     }       
 }
