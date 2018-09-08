@@ -15,7 +15,11 @@ class TopSchoolTeachersController extends Controller
     public function index()
     {
         //
-        return view('/teacher/topteacherperschool');
+        $escuelas = DB::table('schools')
+                ->select('name')->get();
+
+        //dd($escuelas);
+        return view('/teacher/topteacherperschool')->with(compact('escuelas'));
     }
 
     /**

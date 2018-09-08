@@ -15,9 +15,22 @@
           @csrf
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Nombre:</span>
+              <span class="input-group-text" id="basic-addon1">Escuela:</span>
             </div>
-            <input type="text" class="form-control" placeholder="Escuela a buscar..." aria-label="Escuela a buscar..." aria-describedby="basic-addon1" name="school_name">
+				<select class="form-control form-control-lg" name="school_name">
+
+			@if($escuelas !=null)
+			@forelse($escuelas as $esc)
+          	@if($esc->name != null )
+          	
+				<option>{{ $esc->name}} </option>
+          	@endif
+             @empty
+				<option>Escuelas no encontradas</option>>
+          	@endforelse
+			</select>
+			@endif
+ 
           </div>
           @if ($errors->any())
             <div >
