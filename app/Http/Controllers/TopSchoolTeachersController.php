@@ -51,23 +51,25 @@ class TopSchoolTeachersController extends Controller
      */
     public function show(Request $request)
     {
-/*
-        $cursos = DB::table('courses')
-                ->whereIn('id_school',*/
+
         $escuela = $request->input('school_name');
 
+
         $nota = DB::table('reviews')
-                ->select(DB::raw('(SUM(puntuality)+ SUM(knowledge) + SUM(presentation) + SUM(notes)+ SUM(assistance)) as total'),'id_user_evaluated')
-                ->whereIn('id',
+                ->select(DB::raw('(AVG(puntuality)+ AVG(knowledge) + AVG(presentation) + AVG(notes)+ AVG(assistance)) as total'),'id_user_evaluated')
+                ->whereIn('id_user_evaluated',
+        $realuser = DB::table('teachers')
+                ->select('id_user')
+                ->whereIn('id_user',            
         $review = DB::table('reviews')
-                ->select('id')
+                ->select('id_user_evaluated')
                 ->whereIn('id_course',
         $cursos = DB::table('courses')
                 ->select('id')
                 ->whereIn('id_school',
         $id_escuelas = DB::table('schools')
                 ->select('id')
-                ->where('name',$escuela))->distinct()))->groupBy('id_user_evaluated')->orderByRaw('total DESC')/*->get()*/;
+                ->where('name',$escuela))->distinct())))->groupBy('id_user_evaluated')->orderByRaw('total DESC');
 
         $users = DB::table('users')
             ->joinSub($nota, 'reviewed', function($join){
@@ -77,34 +79,7 @@ class TopSchoolTeachersController extends Controller
         //dd($users);
             $users->escuela = $escuela;
             return view('teacher.show_top')->with(compact('users'));
-/*
-        $profesores = DB::table('course_teacher')
-                ->select('id_teacher')
-                ->whereIn('id_course',
-        $cursos = DB::table('courses')
-                ->select('id')
-                ->whereIn('id_school',
-        $id_escuelas = DB::table('schools')
-                ->select('id')
-                ->where('name',$escuela)))->distinct()->get();*/
-                
-          // dd($teachers);     
-//       dd($review);
-/*  
-        
 
-       $results = DB::select('select id_user_evaluated, (puntuality + knowledge+ presentation + notes + assistance) as total from reviews 
-           where id_user_evaluated in(
-           select name from users where id in(
-           select id_teacher from course_teacher where id_course in (
-           select id from courses where id_school in(
-           select id from schools where name = '.$request->input('school_name').'))));');
-
-        dd($results);
-        //
-       /* $name = $request->input('shool_name');
-        $users = Schools::where('name', 'like',$name)->get();
-        return view ('/teacher/show_top')->with(compact('users'));*/
     }
 
     /**

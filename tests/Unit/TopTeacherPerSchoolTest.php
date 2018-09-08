@@ -75,10 +75,10 @@ class TopTeacherPerSchoolTest extends TestCase
      */
     public function generate_top_success()
     {
-        $response = $this->json('GET',  '/Generate_Top', ['school_name' => 'Miss Kenya Doyle']);
+        $response = $this->json('GET',  '/Generate_Top', ['school_name' => 'Carmela Dare I']);
         $response->assertViewIs('teacher.show_top');
         $response->assertSee('Resultados de Reporte');
-        $response->assertSee('1. Anastasia Blick');
+        $response->assertSee('2. Herman');
         $response->assertSuccessful();
     }   
 
@@ -97,7 +97,7 @@ class TopTeacherPerSchoolTest extends TestCase
         $response->assertSuccessful();
     }    
 
-
+    	/*prueba valida el cambio de posicion del usuario
         /**
      * A basic test example.
      * @test
@@ -105,10 +105,10 @@ class TopTeacherPerSchoolTest extends TestCase
      */
     public function generate_top_position_change()
     {
-        $response = $this->json('GET',  '/Generate_Top', ['school_name' => 'Miss Kenya Doyle']);
+        $response = $this->json('GET',  '/Generate_Top', ['school_name' => 'Carmela Dare I']);
         $response->assertViewIs('teacher.show_top');
         $response->assertSee('Resultados de Reporte');
-        $response->assertSee('2. Prof. Calista Strosin');
+        $response->assertSee('2. Herman');
         $response->assertSuccessful();
     }       
 }
