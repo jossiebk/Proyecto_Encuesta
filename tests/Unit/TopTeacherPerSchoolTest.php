@@ -77,7 +77,7 @@ class TopTeacherPerSchoolTest extends TestCase
     {
         $response = $this->json('GET',  '/Generate_Top', ['school_name' => 'Miss Kenya Doyle']);
         $response->assertViewIs('teacher.show_top');
-        $response->assertSee('Resultados de busqueda');
+        $response->assertSee('Resultados de Reporte');
         $response->assertSee('1. Anastasia Blick');
         $response->assertSuccessful();
     }   
@@ -93,7 +93,7 @@ class TopTeacherPerSchoolTest extends TestCase
         $response = $this->json('GET',  '/Generate_Top', ['school_name' => 'Ciencias']);
         $response->assertViewIs('teacher.show_top');
         $response->assertSee('Resultados de Reporte');
-        $response->assertSee('No Reporte Generado');
+        $response->assertSee('Reporte No Generado');
         $response->assertSuccessful();
     }    
 }
