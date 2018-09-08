@@ -66,10 +66,11 @@ Route::get('/assistantProfile/{id}', 'AssistantController@profile');
 Route::get('/AuxReview/{id}', 'AssistantController@reviewAux');
 
 Route::post('/AuxReview/{id}', 'AssistantController@saveReview');
-
 //routes for top teacher per school 
 Route::get('/TopTeacherPerSchool','TopSchoolTeachersController@index');
 
 Route::get('/Generate_Top', 'TopSchoolTeachersController@show');
-
-//
+//ruta para Top10 de Auxiliares por Curso
+Route::get('/Top10AssistantPerSchool', 'Reports@School');
+//ruta para top generado
+Route::get('/Top10AssistantPerSchool/Top_Generado', 'Reports@Top10AssisPerSchool');
