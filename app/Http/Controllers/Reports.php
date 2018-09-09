@@ -20,4 +20,51 @@ class Reports extends Controller
     		]);
     	
     }
+
+    public function Top10AuxGeneral(Request $request){
+        $consulta = \DB::table('reviews as r')
+        ->join('assistants as a', 'r.id', '=', 'a.id')
+        ->join('users as u','u.id','=','a.id_user')
+        ->select('u.name as NAME', 'r.notes as NOTE')
+        ->orderBy('r.notes', 'desc')
+        ->take('10')
+        ->get();
+
+            return view('/Reports/Top10AuxGeneral', [
+            'consulta' => $consulta
+            ]);
+        
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 }

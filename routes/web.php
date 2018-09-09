@@ -66,3 +66,7 @@ Route::get('/assistantProfile/{id}', 'AssistantController@profile');
 Route::get('/AuxReview/{id}', 'AssistantController@reviewAux');
 
 Route::post('/AuxReview/{id}', 'AssistantController@saveReview');
+
+
+//ruta para obtener top 10 de auxiliares en general
+Route::get('/Reports/Top10AuxGeneral','Reports@Top10AuxGeneral');
