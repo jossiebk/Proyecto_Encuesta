@@ -111,6 +111,9 @@ class TeacherController extends Controller
     //Metodo para mostrar el perfil
     public function profile($id){
         $teacher = Teacher::find($id);
+        if(!$teacher){
+            abort(404);
+        }
         return view('catProfile')->with(compact('teacher'));
         }
 

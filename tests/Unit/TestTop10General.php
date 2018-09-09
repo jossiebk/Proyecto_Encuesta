@@ -10,7 +10,7 @@ class TestTop10General extends TestCase
 {
     /**
      * A basic test for top 10 general.
-     *
+     * @test
      * @return void
      */
     public function test_top10_general()

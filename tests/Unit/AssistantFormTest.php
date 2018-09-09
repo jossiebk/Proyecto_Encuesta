@@ -13,6 +13,7 @@ class AssistantFormTest extends TestCase
      * @test
      * @return void
      */
+    
     public function AssistantFormTest()
     {
 
@@ -20,6 +21,50 @@ class AssistantFormTest extends TestCase
      $this->assertDatabaseHas('reviews', ['comment' => 'pruebaunitaria']);
     }
 
+    /**
+     * A basic test example.
+     * @test
+     * @return void
+     */
+    public function testTop10TestBase()
+    {
+        $this->get('/Top10AssistantPerSchool')
+            ->assertStatus(200);
+     //$this->assertDatabaseHas('schools', ['name' => 'Mylene Berge']);
+    }
 
-   
+
+    /**
+     * A basic test example.
+     * @test
+     * @return void
+     */
+        public function VerPagina()
+    {
+        $response = $this->get('/Top10AssistantPerSchool');
+        $response->assertSee('Top10 Auxiliares por Escuela');
+        $response->assertSuccessful();
+    }
+
+     /**
+     * A basic test example.
+     * @test
+     * @return void
+     */
+    public function TestBaseInsert()
+    {
+        $this->assertDatabaseHas('schools', ['name' => 'Mariam Will']);
+    }
+ 
+    /**
+     * A basic test example.
+     * @test
+     * @return void
+     */
+    public function generate_top_success()
+    {
+        $response = $this->json('GET',  '/Top10AssistantPerSchool/Top_Generado', ['school_name' => 'Carmela Dare I']);
+        $response->assertSuccessful();
+    }
+
 }
