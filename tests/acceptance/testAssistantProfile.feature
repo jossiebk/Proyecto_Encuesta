@@ -1,0 +1,9 @@
+Feature: testAssistantProfile
+  In order to ...
+  As a ...
+  I need to ...
+
+
+  Scenario: see the page's description
+  When I am on the page assistant dashboard
+  Then I should see "Descripcion"
