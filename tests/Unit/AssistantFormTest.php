@@ -30,7 +30,6 @@ class AssistantFormTest extends TestCase
     {
         $this->get('/Top10AssistantPerSchool')
             ->assertStatus(200);
-     //$this->assertDatabaseHas('schools', ['name' => 'Mylene Berge']);
     }
 
 
