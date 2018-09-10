@@ -52,6 +52,7 @@ class AcceptanceTester extends \Codeception\Actor
 
 
       /**
+<<<<<<< HEAD
      * @When I am on the teacher profile :arg1 it must exist
      */
      public function iAmOnTheTeacherProfileItMustExist($num1)
@@ -88,5 +89,14 @@ class AcceptanceTester extends \Codeception\Actor
      }
 
 
+
+
+     * @When I am on the page assistant dashboard
+     */
+     public function iAmOnThePageAssistantDashboard()
+     {
+          $this->amOnPage('/assistantProfile/1');
+          
+     }
 
 }
