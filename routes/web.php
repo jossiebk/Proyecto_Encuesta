@@ -46,7 +46,7 @@ Route::get('/ProfileCourse/{id}', 'CourseController@course_teacher_by_id_teacher
 //ruta para obtener el area para calificar catedraticos
 Route::get('/teacherReview/{id}', 'TeacherController@review');
 
-Route::post('/teacherReview/{id}', 'TeacherController@saveReview');
+Route::post('/teacherReview', 'TeacherController@saveReview');
 
 //ruta para obtener top 10 de catedraticos en general
 Route::get('/Reports/Top10General','Reports@Top10General');

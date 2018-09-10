@@ -49,7 +49,7 @@ body {
 <br><br><br><br>
 	<div><h1>Calificar Catedratico</h1></div>
 	<br><br>
-	<form method="post" action="{{ url('/teacherReview/{id}') }}">
+	<form method="post" action="{{ url('/teacherReview') }}">
     @csrf
 	<div><h4>Catedratico:  {{ $teacher->user->name }} </h4>  </div>
 	<div><textarea type="text" name="opinion" placeholder="comentario positivo" style="width:500px; height:200px"></textarea>
