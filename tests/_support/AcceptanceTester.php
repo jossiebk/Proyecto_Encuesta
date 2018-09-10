@@ -49,4 +49,14 @@ class AcceptanceTester extends \Codeception\Actor
          $this->amOnPage('/dash');
          $this->SeeResponseCodeIs(200);
      }
+
+
+      /**
+     * @When I am on the page assistant dashboard
+     */
+     public function iAmOnThePageAssistantDashboard()
+     {
+          $this->amOnPage('/assistantProfile/1');
+          
+     }
 }
