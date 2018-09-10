@@ -39,7 +39,7 @@ class AssistantFormTest extends TestCase
      * @test
      * @return void
      */
-        public function VerPagina()
+    public function VerPagina()
     {
         $response = $this->get('/Top10AssistantPerSchool');
         $response->assertSee('Top10 Auxiliares por Escuela');

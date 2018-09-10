@@ -79,6 +79,10 @@ class DatabaseSeeder extends Seeder
 
     	//Creacion de 10 Escuelas
     	factory(App\School::class, 10)->create();
+        //Creacion de escuela para prueba unitaria
+        factory(App\School::class, 1)->create([
+            'name' => 'Mariam Will'
+        ]);
 
     	//Creacion de 30 Cursos y asignacion de profesores y auxiliares
     	factory(App\Course::class, 30)->create()

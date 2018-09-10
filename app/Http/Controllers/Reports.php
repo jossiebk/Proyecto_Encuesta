@@ -27,7 +27,8 @@ class Reports extends Controller
         $consulta = \DB::table('reviews as r')
         ->join('assistants as a', 'r.id', '=', 'a.id')
         ->join('users as u','u.id','=','a.id_user')
-        ->select('u.name as NAME', 'r.notes as NOTE')
+        ->select('u.name as NAME', 'r.notes as NOTE');
+    }
 
     /**
      * Display a listing of the resource.
@@ -35,7 +36,7 @@ class Reports extends Controller
      * @return \Illuminate\Http\Response
      */
     public function School(){
-        $escuelas = DB::table('schools')
+        $escuelas = \DB::table('schools')
                 ->select('name')->get();
         //dd($escuelas);
         return view('/Reports/Top10AssistantPerSchool')->with(compact('escuelas'));
