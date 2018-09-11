@@ -9,7 +9,7 @@ class ProfessorResult extends Controller
     //
 
 
-    public function indexReporte3(Request $request){
+    public function indexProfessorResult(Request $request){
 
     	$consulta = \DB::select(' SELECT cu.name as CURSO, (sum(r.puntuality)+sum(r.knowledge)+sum(r.presentation)+sum(r.notes)+sum(r.assistance))/5 as NOTA 
 									FROM reviews as r

@@ -254,4 +254,20 @@ class TeacherController extends Controller
         return $rating;
     }
 
+
+    //metodo para obtener los resultados del profesor
+    public function indexProfessorResult(Request $request){
+
+        $consulta = \DB::select(' SELECT cu.name as CURSO, (sum(r.puntuality)+sum(r.knowledge)+sum(r.presentation)+sum(r.notes)+sum(r.assistance))/5 as NOTA 
+                                    FROM reviews as r
+                                    inner join courses as cu
+                                        on r.id_course=cu.id
+                                    WHERE id_user_evaluated=15
+                                    group by r.id_user_evaluated, r.id_course;');
+
+        return view('/perCat', [
+            'consulta' => $consulta
+            ]);
+    }
+
 }
