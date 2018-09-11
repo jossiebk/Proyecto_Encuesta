@@ -20,7 +20,7 @@ class AssistantFormTest extends TestCase
     $response = $this->json('POST','/formAux', ['p1' => '1','p2' => '1','p3' => '1','p4' => '1','p5' => '1','comment' => 'pruebaunitaria','id_user_evaluator' => '1','id_user_evaluated' => '1','id_course' => '1']);
      $this->assertDatabaseHas('reviews', ['comment' => 'pruebaunitaria']);
     }
-
+    //PRUEBA UNITARIAS PARA EL TOP 10 DE AUXILIARES POR ESCUELA
     /**
      * A basic test example.
      * @test
@@ -66,5 +66,15 @@ class AssistantFormTest extends TestCase
         $response = $this->json('GET',  '/Top10AssistantPerSchool/Top_Generado', ['school_name' => 'Carmela Dare I']);
         $response->assertSuccessful();
     }
-
+    //PRUEBA UNITARIAS PARA EL TOP 10 DE AUXILIARES POR UNIDAD ACADEMICA
+    /**
+     * A basic test example.
+     * @test
+     * @return void
+     */
+    public function testTop10AssistantsPerUnitAcademic()
+    {
+        $this->get('/Top10AssistantPerAcademicUnit')
+            ->assertStatus(200);
+    }
 }
