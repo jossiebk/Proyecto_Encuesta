@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class TestTop10AuxGeneral extends TestCase
+class Top10GeneralTest extends TestCase
 {
     /**
      * A basic test example.
@@ -15,7 +15,7 @@ class TestTop10AuxGeneral extends TestCase
      */
     public function testExample()
     {
-        $this->get('/Reports/Top10AuxGeneral')
+        $this->get('/Reports/Top10General')
         ->assertStatus(200);
     }
 }

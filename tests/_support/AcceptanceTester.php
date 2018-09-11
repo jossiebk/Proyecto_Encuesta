@@ -90,7 +90,7 @@ class AcceptanceTester extends \Codeception\Actor
 
 
 
-
+     /**
      * @When I am on the page assistant dashboard
      */
      public function iAmOnThePageAssistantDashboard()

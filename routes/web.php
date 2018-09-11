@@ -31,7 +31,7 @@ Route::get('/search', 'SearchController@show'); //Ruta para buscar a un catedrat
 
 Route::get('/formAux/{id}', 'AssistantController@evaluation');
 
-Route::post('/formAux/{id}', 'AssistantController@saveEvaluation');
+Route::post('/formAux/', 'AssistantController@saveEvaluation');
 
 
 

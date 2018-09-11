@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class TestTop10APS extends TestCase
+class AssistantPerSchoolTopTest extends TestCase
 {
     /**
      * A basic test example.
@@ -15,6 +15,7 @@ class TestTop10APS extends TestCase
      */
     public function testExample()
     {
-        $this->assertTrue(true);
+        $this->get('/Top10AssistantPerSchool')
+            ->assertStatus(200);
     }
 }

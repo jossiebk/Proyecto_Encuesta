@@ -12,4 +12,4 @@ modules:
             cleanup: false # can't wrap into transaction
         - \Helper\Acceptance
         - PhpBrowser:
-            url: http://localhost:8000
+            url: http://proyecto.test:8888
