@@ -30,6 +30,4 @@
 
 @section('content')
 
-
-
 @endsection
