@@ -102,5 +102,8 @@ class DatabaseSeeder extends Seeder
     		'id_user_evaluated' => App\Assistant::all()->random()->user->id,
     	]);
 
+        //Llamadas a otros seeders
+        $this->call(SchoolsDataSeeder::class);
+
     }
 }

@@ -5,12 +5,10 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 
-class TestCourseProfessor extends TestCase
+class CourseProfessorTest extends TestCase
 {
-  
-    /**
+     /**
      * A basic test example.
      * @test
      * @return void
@@ -25,7 +23,11 @@ class TestCourseProfessor extends TestCase
     }
 
 
-
+    /**
+     * A basic test example.
+     * @test
+     * @return void
+     */
     public function if_serch_professor_course_not_exist()
     {
         $response = $this->json('GET',  '/ProfileCourse/sdf');
@@ -34,7 +36,4 @@ class TestCourseProfessor extends TestCase
         	$response->assertSuccessful();
         }
     }
-
-
-
 }
