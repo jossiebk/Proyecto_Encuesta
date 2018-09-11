@@ -46,10 +46,10 @@
               <a class="nav-link js-scroll-trigger" href="#">Opcion2</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Opcion3</a>
+              <a class="nav-link js-scroll-trigger" href="#">Iniciar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Opcion4</a>
+              <a class="nav-link js-scroll-trigger" href="{{url('/') }}">Salir</a>
             </li>
             @yield('boton')
           </ul>
