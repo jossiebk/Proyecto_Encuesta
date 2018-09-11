@@ -99,4 +99,17 @@ class Reports extends Controller
             ]);
 
     }
+
+    //TOP 10 DE AUXILIARES POR UNIDAD ACADEMICA
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function AcademicUnit(){
+        $escuelas = \DB::table('academic_units')
+                ->select('name')->get();
+        //dd($escuelas);
+        return view('/Reports/Top10AssistantPerAcademicUnit')->with(compact('escuelas'));
+    }
 }

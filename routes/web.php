@@ -81,3 +81,5 @@ Route::get('/Top10AssistantPerSchool', 'Reports@School');
 //ruta para top generado
 Route::get('/Top10AssistantPerSchool/Top_Generado', 'Reports@Top10AssisPerSchool');
 
+//ruta para Top10 de Auxiliares por Curso
+Route::get('/Top10AssistantPerAcademicUnit', 'Reports@AcademicUnit');

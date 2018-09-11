@@ -8,13 +8,15 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class Top10APSTest extends TestCase
 {
+	//Pruebas unitarias para Auxiliares por unidad academica
     /**
      * A basic test example.
-     *
+     * @test
      * @return void
      */
-    public function testExample()
+    public function PaginaExistenteTest()
     {
-        $this->assertTrue(true);
+        $this->get('/Top10AssistantPerAcademicUnit')
+            ->assertStatus(200);
     }
 }
