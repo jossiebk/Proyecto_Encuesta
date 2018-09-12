@@ -8,13 +8,28 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class TopTeacherPerAcademicUnitTest extends TestCase
 {
-    /**
+
+     /**
      * A basic test example.
-     *
+     * @test
      * @return void
      */
-    public function testExample()
+    	public function testPaginaTop()
     {
-        $this->assertTrue(true);
+    	$this->get('/TopTeacherPerAcademiCUnit')
+    		->assertStatus(200);
     }
+
+    /**
+     * A basic test example.
+     * @test
+     * @return void
+     */
+    	public function VerPagina()
+    {
+    	$response = $this->get('/TopTeacherPerAcademiCUnit');
+        $response->assertSee('TOP 10 CATEDRATICOS POR UNIDAD ACADEMICA');
+        $response->assertSuccessful();
+    }    
+
 }
