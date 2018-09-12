@@ -15,7 +15,7 @@ class ProfessorResultTest extends TestCase
      */
     public function validates_id_of_the_teacher()
     {	
-    	$this->get('/perCat/1')
+    	$this->get('/perCat/15')
     		->assertStatus(200);
     }
 }

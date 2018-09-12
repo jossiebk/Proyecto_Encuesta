@@ -38,6 +38,10 @@ Route::post('/teacher_form/evaluate','TeacherController@store');
 // ruta para perfil del catedratico
 Route::get('/perCat/{id}', 'TeacherController@profile');
 
+// ruta para notas obendias  del catedratico
+Route::get('/teacher/ProfessorResult/{id}', 'ProfessorResult@indexProfessorResult');
+
+
 // ruta para obtener cursos del catedratico
 Route::get('/ProfileCourse/{id}', 'CourseController@course_teacher_by_id_teacher');
 
