@@ -9,6 +9,17 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class Top10APSTest extends TestCase
 {
 	//Pruebas unitarias para Auxiliares por unidad academica
+     /**
+     * A basic test example.
+     * @test
+     * @return void
+     */
+        public function BaseDeDatosTest()
+    {
+    	$this->assertDatabaseHas('academic_units', ['name' => 'Tom Nader']);
+    }
+
+
     /**
      * A basic test example.
      * @test
