@@ -81,3 +81,7 @@ Route::get('/Top10AssistantPerSchool', 'Reports@School');
 //ruta para top generado
 Route::get('/Top10AssistantPerSchool/Top_Generado', 'Reports@Top10AssisPerSchool');
 
+//routes for top teacher per school 
+Route::get('/TopTeacherPerAcademicUnit','TopAcademicUnitTeachersController@index');
+
+Route::get('/GenerateTopAU', 'TopAcademicUnitTeachersController@show');

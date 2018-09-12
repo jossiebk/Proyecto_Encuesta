@@ -16,7 +16,7 @@ class TopTeacherPerAcademicUnitTest extends TestCase
      */
     	public function testPaginaTop()
     {
-    	$this->get('/TopTeacherPerAcademiCUnit')
+    	$this->get('/TopTeacherPerAcademicUnit')
     		->assertStatus(200);
     }
 
@@ -27,7 +27,7 @@ class TopTeacherPerAcademicUnitTest extends TestCase
      */
     	public function VerPagina()
     {
-    	$response = $this->get('/TopTeacherPerAcademiCUnit');
+    	$response = $this->get('/TopTeacherPerAcademicUnit');
         $response->assertSee('TOP 10 CATEDRATICOS POR UNIDAD ACADEMICA');
         $response->assertSuccessful();
     }    
