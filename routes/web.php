@@ -12,10 +12,8 @@
 */
 
 
-Route::get('/', function () {
-    return view('home');
-});
 
+Route::get('/','Controller@homePage');
 
 Route::get('/dash', function () {
     return view('dashboard');
