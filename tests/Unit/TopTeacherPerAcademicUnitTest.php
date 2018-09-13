@@ -32,4 +32,33 @@ class TopTeacherPerAcademicUnitTest extends TestCase
         $response->assertSuccessful();
     }    
 
+
+
+    /**
+     * A basic test example.
+     * @test
+     * @return void
+     */
+    	public function Indicaciones_parametro_select()
+    {
+    	$response = $this->get('/TopTeacherPerAcademicUnit');
+        $response->assertSee('Seleccione el nombre de la Unidad Academica desee consultar');
+        $response->assertSee('Unidad Academica:');
+        $response->assertSuccessful();
+    }    
+
+
+    /**
+     * A basic test example.
+     * @test
+     * @return void
+     */
+    	public function Indicaciones_parametro_select_2()
+    {
+    	$response = $this->get('/TopTeacherPerAcademicUnit');
+        $response->assertSee('Unidad Academica:');
+        $response->assertSuccessful();
+    }    
+
+
 }
