@@ -108,4 +108,20 @@ class AcceptanceTester extends \Codeception\Actor
          $this->SeeResponseCodeIs(200);
      }
 
+
+      /**
+     * @Then I should see in field opinion :arg1
+     */
+     public function iShouldSeeInFieldOpinion($arg1)
+     {
+         $this->seeInField('form textarea[name=opinion]',$arg1);
+     }
+
+     /**
+     * @Then I should see in field  segundaopinion :arg1
+     */
+     public function iShouldSeeInFieldSegundaopinion($arg1)
+     {
+         $this->seeInField('form textarea[name=opinion2]',$arg1);
+     }
 }
