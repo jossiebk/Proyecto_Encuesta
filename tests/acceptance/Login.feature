@@ -2,7 +2,7 @@ Feature: Testing for login page
 
 	Scenario: Login with valid credentials
 		Given I am on the login page
-		When I type "student1" in the username input field
+		When I type "student1@mail.com" in the username input field
 		And I type "123456" in the password input field
 		And I click the login button
 		Then I should be on the welcome page
@@ -10,7 +10,7 @@ Feature: Testing for login page
 
 	Scenario: Login with bad password
 		Given I am on the login page
-		When I type "student1" in the username input field
+		When I type "student1@mail.com" in the username input field
 		And I type "123456789" in the password input field
 		And I click the login button
 		Then I should be on the login page

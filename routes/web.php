@@ -79,3 +79,7 @@ Route::get('/Top10AssistantPerSchool', 'Reports@School');
 //ruta para top generado
 Route::get('/Top10AssistantPerSchool/Top_Generado', 'Reports@Top10AssisPerSchool');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

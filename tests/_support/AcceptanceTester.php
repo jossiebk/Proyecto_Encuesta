@@ -132,7 +132,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iShouldBeOnTheWelcomePage()
      {
-         $this->amOnPage('/welcome');
+         $this->amOnPage('/');
      }
 
     /**
@@ -140,7 +140,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iShouldBeOnTheLoginPage()
      {
-         $this->amOnPage('/login');
+         $this->seeCurrentUrlEquals('/login');
      }
 
 
