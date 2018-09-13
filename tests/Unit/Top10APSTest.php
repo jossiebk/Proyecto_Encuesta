@@ -19,7 +19,6 @@ class Top10APSTest extends TestCase
     	$this->assertDatabaseHas('academic_units', ['name' => 'Tom Nader']);
     }
 
-
     /**
      * A basic test example.
      * @test
@@ -29,5 +28,17 @@ class Top10APSTest extends TestCase
     {
         $this->get('/Top10AssistantPerAcademicUnit')
             ->assertStatus(200);
+    }
+
+    /**
+     * A basic test example.
+     * @test
+     * @return void
+     */
+    	public function VerPagina()
+    {
+    	$response = $this->get('/Top10AssistantPerAcademicUnit');
+        $response->assertSee('TOP 10 AUXILIARES POR UNIDAD ACADEMICA');
+        $response->assertSuccessful();
     }
 }
