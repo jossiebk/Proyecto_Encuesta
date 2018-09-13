@@ -12,3 +12,11 @@ Feature: qualifyAssistant
   When I am on the assistantReview page $3 it must exist
   Then I should see in field opinion ""
   And I should see in field  segundaopinion ""
+
+  Scenario: Be able to qualify the assistant and submit it
+  When I am on the assistantReview page $2 it must exist
+  And "opinion" has "Comentario1"
+  And "opinion2" has "Comentario2"
+  And "score" has "5"
+  And "id" hasnumber $6
+  Then I must be able to submit my qualification

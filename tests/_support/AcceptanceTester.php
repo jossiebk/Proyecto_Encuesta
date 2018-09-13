@@ -124,4 +124,29 @@ class AcceptanceTester extends \Codeception\Actor
      {
          $this->seeInField('form textarea[name=opinion2]',$arg1);
      }
+
+      /**
+     * @When :arg1 has :arg2
+     */
+     public function has($arg1, $arg2)
+     {
+         $this->fillField($arg1,$arg2);
+     }
+
+    /**
+     * @When :arg1 hasnumber $:num1
+     */
+     public function hasnumber($num1, $arg1)
+     {
+         $this->fillField($num1,$arg1);
+     }
+
+
+    /**
+     * @Then I must be able to submit my qualification
+     */
+     public function iMustBeAbleToSubmitMyQualification()
+     {
+        $this->click('Guardar');
+     }
 }
