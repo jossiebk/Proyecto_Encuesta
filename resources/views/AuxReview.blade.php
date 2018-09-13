@@ -38,37 +38,62 @@ body {
 <div style="background-image: url('/img/header.jpg'); height: 950px; width: 1600px;">
 @section('content')
 <br><br><br><br>
-  <div><h1>Calificar Auxiliar</h1></div>
+
+  <div class="row align-items-center justify-content-center">
+    <h1 style="color:white;" class="display-3">Calificar Auxiliar</h1>
+  </div>
   <br><br>
   <form method="post" action="{{ url('/AuxReview/{id}') }}">
   @csrf
-  <div>
-    <h4>Auxiliar:{{ $assistant->user->name }}</h4>  
- <p class="clasificacion">
-    <input id="radio1" type="radio" name="estrellas" value="5"><!--
-    --><label for="radio1">★</label><!--
-    --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-    --><label for="radio2">★</label><!--
-    --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-    --><label for="radio3">★</label><!--
-    --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-    --><label for="radio4">★</label><!--
-    --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-    --><label for="radio5">★</label>
-  </p>
+  <div class="row align-items-center justify-content-center">
+  <h1 style="color:white;" class="display-5">{{ $assistant->user->name }}</h1>
+      </div>
 
-  </div>
+  
   <div>
+ <p class="clasificacion" style="font-size:50px; text-align:center;" >
+
+      <input id="radio1" type="radio" name="estrellas" value="5">
+      <label for="radio1">★</label>
+
+      <input id="radio2" type="radio" name="estrellas" value="4">
+      <label for="radio2">★</label>
+
+      <input id="radio3" type="radio" name="estrellas" value="3">
+      <label for="radio3">★</label>
+
+      <input id="radio4" type="radio" name="estrellas" value="2">
+      <label for="radio4">★</label>
+      
+      <input id="radio5" type="radio" name="estrellas" value="1">
+      <label for="radio5">★</label>
+  </p>
+  </div>
+
+  <div class="row align-items-center justify-content-center">
 
     <textarea type="text" name="opinion" placeholder="comentario" style="width:500px; height:200px"></textarea>
+    <br>
     <textarea type="text" name="opinion2" placeholder="comentario" style="width:500px; height:200px"></textarea>
   </div>
-  <div><input type="text" name="score" placeholder="punteo"></input></div>
-  <div><input type="number" name="id" placeholder="id"></input></div>
-  <br><br>
 
-  <br><br>
-  <button >Guardar</button>
+  <br>
+  <div class="row align-items-center justify-content-center">
+    <input type="text" name="score" placeholder="punteo"></input>
+  </div>
+
+  <div class="row align-items-center justify-content-center">
+    <input type="number" name="id" placeholder="id"></input>
+  </div>
+  <br>
+  <div class="row align-items-center justify-content-center ">
+
+  <div class="col-sm-4">
+  <button type="button" class="btn btn-success btn-block" >Guardar</button>  
+  </div>
+
+  </div>
+  
   </form>
 </div>
 </body>
