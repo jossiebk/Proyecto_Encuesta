@@ -99,4 +99,13 @@ class AcceptanceTester extends \Codeception\Actor
           
      }
 
+      /**
+     * @When I am on the assistantReview page $:num1 it must exist
+     */
+     public function iAmOnTheAssistantReviewPageItMustExist($num1)
+     {
+         $this->amOnPage("/AuxReview/$num1");
+         $this->SeeResponseCodeIs(200);
+     }
+
 }

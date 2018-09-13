@@ -43,7 +43,7 @@ body {
   <form method="post" action="{{ url('/AuxReview/{id}') }}">
   @csrf
   <div>
-    <h4>Auxiliar: ################## </h4>  
+    <h4>Auxiliar:{{ $assistant->user->name }}</h4>  
  <p class="clasificacion">
     <input id="radio1" type="radio" name="estrellas" value="5"><!--
     --><label for="radio1">★</label><!--
