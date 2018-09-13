@@ -7,7 +7,7 @@
 
 
 @section('content')
-		<br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
       <div class="container text-center">
         <h2 class="section-heading text-white">TOP 10 CATEDRATICOS POR UNIDAD ACADEMICA</h2>
         <hr class="light my-4">
@@ -18,15 +18,32 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Unidad Academica:</span>
             </div>
-				<select class="form-control form-control-lg" name="school_name">
+        <select class="form-control form-control-lg" name="school_name">
 
-				</select>
-			</div>
-			
-				<br>
-				<br>
+      @if($unidades !=null)
+      @forelse($unidades as $uni)
+            @if($uni->name != null )
+            
+        <option>{{ $uni->name}} </option>
+            @endif
+             @empty
+        <option>Unidades no encontradas</option>>
+            @endforelse
+      </select>
+      @endif
+ 
+          </div>
+          @if ($errors->any())
+            <div >
+                <ul style="list-style-type:none">
+                    @foreach ($errors->all() as $error)
+                        <li><p class="section-heading h4">{{ $error }}</p></li>
+                    @endforeach
+                </ul>
+            </div>
+          @endif
           <input class="btn btn-light btn-xl" type="submit" value="Buscar!"></input>
         </form>
-		</div>
-		</div>
+    </div>
+    </div>
 @endsection

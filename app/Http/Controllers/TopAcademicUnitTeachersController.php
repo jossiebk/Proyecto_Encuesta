@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TopAcademicUnitTeachersController extends Controller
 {
@@ -13,7 +14,10 @@ class TopAcademicUnitTeachersController extends Controller
      */
     public function index()
     {
-        return view('/teacher/topteacherperacademicunit');
+        $unidades = DB::table('academic_units')
+                ->select('name')->get();
+       //dd($unidades);
+        return view('/teacher/topteacherperacademicunit')->with(compact('unidades'));
         //
     }
 
