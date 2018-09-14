@@ -17,7 +17,7 @@
         <h5 class="card-title">Los 10 auxiliares por unidad academica mejor calificados son:</h5>
       </div>
 
-        <form method="GET" action="{{ url('/Top10AssistantPerAcademicUnit') }}">
+        <form method="GET" action="{{ url('Top10AssistantPerAcademicUnit/Top_Generado') }}">
    @csrf
           <div class="input-group mb-3">
             <div class="input-group-prepend">

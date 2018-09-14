@@ -112,4 +112,29 @@ class Reports extends Controller
         //dd($escuelas);
         return view('/Reports/Top10AssistantPerAcademicUnit')->with(compact('escuelas'));
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+        public function Top10AssisPerAcademicUnit(Request $request){
+        $escuela = $request->input('school_name');
+        $consulta = \DB::table('reviews as r')
+        ->join('users as u','r.id_user_evaluated','=','u.id')
+        ->join('assistants as t', 't.id_user', '=', 'u.id')
+        ->join('courses as c','c.id','=','r.id_course')
+        ->join('schools as sc','c.id_school','=','sc.id')
+        ->select('u.name as NAME', 'r.notes as NOTE', 'c.name as COURSE')
+        ->where('sc.name','=',$escuela)
+        ->orderBy('r.notes', 'desc')
+        ->take('10')
+        ->get();
+
+            return view('/Reports/Top10APAU', [
+            'consulta' => $consulta
+            ]);
+        
+    }
 }
