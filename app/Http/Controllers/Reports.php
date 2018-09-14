@@ -125,7 +125,7 @@ class Reports extends Controller
         ->join('users as u','r.id_user_evaluated','=','u.id')
         ->join('assistants as t', 't.id_user', '=', 'u.id')
         ->join('courses as c','c.id','=','r.id_course')
-        ->join('schools as sc','c.id_school','=','sc.id')
+        ->join('academic_units as sc','c.id_school','=','sc.id')
         ->select('u.name as NAME', 'r.notes as NOTE', 'c.name as COURSE')
         ->where('sc.name','=',$escuela)
         ->orderBy('r.notes', 'desc')
