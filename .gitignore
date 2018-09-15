@@ -13,4 +13,5 @@ yarn-error.log
 .env
 .env.example
 .env.testing
-acceptance.suite.yml
+/tests/acceptance.suite.yml
+
