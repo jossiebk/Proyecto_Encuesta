@@ -10,17 +10,21 @@ class ProfessorResult extends Controller
 
 
     public function indexProfessorResult(Request $request,$id){
+        try {
+            $consulta = \DB::select(' SELECT cu.name as CURSO, (sum(r.puntuality)+sum(r.knowledge)+sum(r.presentation)+sum(r.notes)+sum(r.assistance))/5 as NOTA 
+                                    FROM reviews as r
+                                    inner join courses as cu
+                                        on r.id_course=cu.id
+                                    WHERE id_user_evaluated=' . $id .'
+                                    GROUP BY r.id_user_evaluated, r.id_course;');
 
-    	$consulta = \DB::select(' SELECT cu.name as CURSO, (sum(r.puntuality)+sum(r.knowledge)+sum(r.presentation)+sum(r.notes)+sum(r.assistance))/5 as NOTA 
-									FROM reviews as r
-									inner join courses as cu
-										on r.id_course=cu.id
-									WHERE id_user_evaluated=' . $id .'
-									GROUP BY r.id_user_evaluated, r.id_course;');
-
-    	return view('/teacher/ProfessorResult', [
-    		'consulta' => $consulta
-    		]);
+        return view('teacher.ProfessorResult', [
+            'consulta' => $consulta
+            ]);
+        } catch (Exception $e) {
+            return view('teacher.ProfessorResult');
+        }
+    	
     }
 
 

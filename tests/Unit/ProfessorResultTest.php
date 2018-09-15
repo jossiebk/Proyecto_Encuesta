@@ -36,9 +36,9 @@ class ProfessorResultTest extends TestCase
      */
     public function if_serch_professor_course_not_exist()
     {
-        $response = $this->json('GET',  '/teacher/ProfessorResult/15lkji');
-        $response->assertViewIs('/teacher/ProfessorResult');
-        $response->assertDontSee('Notas obtenidas por Curso:');
+        $response = $this->json('GET',  '/teacher/ProfessorResult/150');
+        $response->assertViewIs('teacher.ProfessorResult');
+        $response->assertSee('Notas obtenidas por Curso:');
         $response->assertSuccessful();
     }
 }
