@@ -38,7 +38,7 @@
 </center>
 <BR><BR>
 @else
-<h3>No se encontró ningún curso para calificar </h3>
+<h3>No se encontró ningún curso calificado </h3>
 @endif
 
 	</div>
