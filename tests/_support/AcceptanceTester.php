@@ -160,4 +160,55 @@ class AcceptanceTester extends \Codeception\Actor
          $this->seeCurrentUrlEquals('/login');
      }
 
+      /**
+     * @When I am on the assistantReview page $:num1 it must exist
+     */
+     public function iAmOnTheAssistantReviewPageItMustExist($num1)
+     {
+         $this->amOnPage("/AuxReview/$num1");
+         $this->SeeResponseCodeIs(200);
+     }
+
+
+      /**
+     * @Then I should see in field opinion :arg1
+     */
+     public function iShouldSeeInFieldOpinion($arg1)
+     {
+         $this->seeInField('form textarea[name=opinion]',$arg1);
+     }
+
+     /**
+     * @Then I should see in field  segundaopinion :arg1
+     */
+     public function iShouldSeeInFieldSegundaopinion($arg1)
+     {
+         $this->seeInField('form textarea[name=opinion2]',$arg1);
+     }
+
+      /**
+     * @When :arg1 has :arg2
+     */
+     public function has($arg1, $arg2)
+     {
+         $this->fillField($arg1,$arg2);
+     }
+
+    /**
+     * @When :arg1 hasnumber $:num1
+     */
+     public function hasnumber($num1, $arg1)
+     {
+         $this->fillField($num1,$arg1);
+     }
+
+
+    /**
+     * @Then I must be able to submit my qualification
+     */
+     public function iMustBeAbleToSubmitMyQualification()
+     {
+        $this->click('Guardar');
+     }
+
 }
