@@ -83,7 +83,6 @@ Route::get('/Top10AssistantPerSchool', 'Reports@School');
 //ruta para top generado
 Route::get('/Top10AssistantPerSchool/Top_Generado', 'Reports@Top10AssisPerSchool');
 
-
 //routes for top teacher per school 
 Route::get('/TopTeacherPerAcademicUnit','TopAcademicUnitTeachersController@index');
 
@@ -93,3 +92,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+//ruta para Top10 de Auxiliares por Curso
+Route::get('/Top10AssistantPerAcademicUnit', 'Reports@AcademicUnit');
+//ruta para top generado
+Route::get('/Top10AssistantPerAcademicUnit/Top_Generado', 'Reports@Top10AssisPerAcademicUnit');

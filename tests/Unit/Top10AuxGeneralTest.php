@@ -13,7 +13,7 @@ class Top10AuxGeneralTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function Top10AuxGeneralTest()
     {
         $this->get('/Reports/Top10AuxGeneral')
         ->assertStatus(200);
