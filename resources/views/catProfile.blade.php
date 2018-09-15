@@ -89,6 +89,13 @@
  	role="button" >Cursos</a>
  </div>
 
+<br> <br>
+ <div class="col-sm-4">
+ <a href="{{url('/teacher/ProfessorResult',['id'=>$teacher->id]) }}" 
+  class="btn btn-warning btn-block" 
+  role="button" >Ver Notas</a>
+ </div>
+
 </div>
 </div>
 </div>
