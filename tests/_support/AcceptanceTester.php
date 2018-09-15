@@ -99,4 +99,20 @@ class AcceptanceTester extends \Codeception\Actor
           
      }
 
+     /**
+     * @When I am on any page
+     */
+     public function iAmOnAnyPage()
+     {
+         $this->amOnPage('/teacher_form/1');
+     }
+
+    /**
+     * @When I press the button
+     */
+     public function iPressTheButton()
+     {
+         $this->amOnPage('/');
+     }
+
 }
