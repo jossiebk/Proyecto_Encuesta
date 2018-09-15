@@ -6,16 +6,15 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ProfessorResultTest extends TestCase
+class PruebaTest extends TestCase
 {
     /**
      * A basic test example.
      *
      * @return void
      */
-    public function validates_id_of_the_teacher()
-    {	
-    	$this->get('/teacher/ProfessorResult/15')
-    		->assertStatus(200);
+    public function testExample()
+    {
+        $this->assertTrue(true);
     }
 }
