@@ -45,12 +45,30 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#">Opcion2</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Iniciar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{{url('/') }}">Salir</a>
-            </li>
+            @guest
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="login">Iniciar</a>
+              </li>
+            @else
+              <li class="dropdown nav-item">
+                  <a href="#" class="dropdown-toggle nav-link js-scroll-trigger" data-toggle="dropdown" role="button" aria-expanded="true" aria-haspopup="true">
+                      Cuenta <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                          Cerrar Sesion
+                      </a>
+
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          {{ csrf_field() }}
+                      </form>
+                    </li>
+                  </ul>
+              </li>
+            @endguest
             @yield('boton')
           </ul>
         </div>

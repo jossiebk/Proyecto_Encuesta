@@ -50,9 +50,7 @@ class AcceptanceTester extends \Codeception\Actor
          $this->SeeResponseCodeIs(200);
      }
 
-
-      /**
-<<<<<<< HEAD
+    /**
      * @When I am on the teacher profile :arg1 it must exist
      */
      public function iAmOnTheTeacherProfileItMustExist($num1)
@@ -88,8 +86,6 @@ class AcceptanceTester extends \Codeception\Actor
          $this->SeeResponseCodeIs(200);
      }
 
-
-
      /**
      * @When I am on the page assistant dashboard
      */
@@ -111,8 +107,54 @@ class AcceptanceTester extends \Codeception\Actor
      * @When I press the button
      */
      public function iPressTheButton()
+
+     /*
+     * @Given I am on the login page
+     */
+     public function iAmOnTheLoginPage()
+     {
+         $this->amOnPage('/login');
+     }
+
+    /**
+     * @When I type :arg1 in the username input field
+     */
+     public function iTypeInTheUsernameInputField($arg1)
+     {
+         $this->fillField('email', $arg1);
+     }
+
+    /**
+     * @When I type :arg1 in the password input field
+     */
+     public function iTypeInThePasswordInputField($arg1)
+     {
+         $this->fillField('password', $arg1);
+     }
+
+    /**
+     * @When I click the login button
+     */
+     public function iClickTheLoginButton()
+     {
+         $this->click('Submit');
+     }
+
+    /**
+     * @Then I should be on the welcome page
+     */
+     public function iShouldBeOnTheWelcomePage()
+
      {
          $this->amOnPage('/');
+     }
+
+    /**
+     * @Then I should be on the login page
+     */
+     public function iShouldBeOnTheLoginPage()
+     {
+         $this->seeCurrentUrlEquals('/login');
      }
 
 }
