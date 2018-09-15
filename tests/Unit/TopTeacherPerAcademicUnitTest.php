@@ -68,7 +68,7 @@ class TopTeacherPerAcademicUnitTest extends TestCase
      */
     public function generate_top_nothing()
     {
-        $response = $this->json('GET',  '/Generate_TopAU', ['unit_name' => 'Ciencias']);
+        $response = $this->json('GET',  '/GenerateTopAU', ['unit_name' => 'Ciencias']);
         $response->assertViewIs('teacher.show_topau');
         $response->assertSee('Resultados de Reporte:');
         $response->assertSee('Reporte No Generado');
@@ -83,7 +83,7 @@ class TopTeacherPerAcademicUnitTest extends TestCase
      */
     public function generate_top_generated()
     {
-        $response = $this->json('GET',  '/Generate_TopAU', ['unit_name' => 'King Beer I']);
+        $response = $this->json('GET',  '/GenerateTopAU', ['unit_name' => 'King Beer I']);
         $response->assertViewIs('teacher.show_topau');
         $response->assertSee('Reporte Top Catedraticos por Unidad Academica');
         $response->assertSee('Resultados de Reporte:');

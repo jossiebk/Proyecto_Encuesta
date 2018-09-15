@@ -12,13 +12,13 @@
         <h2 class="section-heading text-white">TOP 10 CATEDRATICOS POR UNIDAD ACADEMICA</h2>
         <hr class="light my-4">
          <p class="text-faded mb-4">Seleccione el nombre de la Unidad Academica desee consultar</p>
-        <form method="GET" action="{{ url('/Generate_Top') }}">
+        <form method="GET" action="{{ url('/GenerateTopAU') }}">
           @csrf
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Unidad Academica:</span>
             </div>
-        <select class="form-control form-control-lg" name="school_name">
+        <select class="form-control form-control-lg" name="unit_name">
 
       @if($unidades !=null)
       @forelse($unidades as $uni)

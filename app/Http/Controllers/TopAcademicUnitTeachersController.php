@@ -48,9 +48,64 @@ class TopAcademicUnitTeachersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
         //
+       $unidad = $request->input('unit_name');
+
+
+        $nota = DB::table('reviews')
+        ->select(DB::raw('(AVG(puntuality)+ AVG(knowledge) + AVG(presentation) + AVG(notes)+ AVG(assistance)) as total'),'id_user_evaluated')
+        ->whereIn('id_user_evaluated',
+        $real_user = DB::table('teachers')
+            ->select('id_user')
+            ->whereIn('id',
+        $id_teachers = DB::table('course_teacher')
+            ->select('id_teacher')
+            ->whereIn('id_course',
+        $id_cursos = DB::table('courses')
+            ->select('id')
+            ->whereIn('id_academic_unit',
+        $id_unidades = DB::table('academic_units')
+            ->select('id')
+            ->where('name', $unidad))->distinct())))->groupBy('id_user_evaluated')->orderByRaw('total DESC');
+
+         $users = DB::table('users')
+            ->joinSub($nota, 'reviewed', function($join){
+                $join->on('reviewed.id_user_evaluated','=','users.id');
+            })->limit(10)->get();
+
+        //dd($users);
+        $users->unidad = $unidad;
+            return view('teacher.show_topau')->with(compact('users'));
+
+
+/*
+        $nota = DB::table('reviews')
+                ->select(DB::raw('(AVG(puntuality)+ AVG(knowledge) + AVG(presentation) + AVG(notes)+ AVG(assistance)) as total'),'id_user_evaluated')
+                ->whereIn('id_user_evaluated',
+        $realuser = DB::table('teachers')
+                ->select('id_user')
+                ->whereIn('id_user',            
+        $review = DB::table('reviews')
+                ->select('id_user_evaluated')
+                ->whereIn('id_course',
+        $cursos = DB::table('courses')
+                ->select('id')
+                ->whereIn('id_school',
+        $id_escuelas = DB::table('schools')
+                ->select('id')
+                ->where('name',$escuela))->distinct())))->groupBy('id_user_evaluated')->orderByRaw('total DESC');
+
+        $users = DB::table('users')
+            ->joinSub($nota, 'reviewed', function($join){
+                $join->on('reviewed.id_user_evaluated','=','users.id');
+            })->limit(10)->get();
+
+        //dd($users);
+            $users->escuela = $escuela;
+            return view('teacher.show_top')->with(compact('users')); */
+
     }
 
     /**
