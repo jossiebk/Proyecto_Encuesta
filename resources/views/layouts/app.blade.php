@@ -48,6 +48,7 @@
             @guest
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="login">Iniciar</a>
+                <a class="nav-link js-scroll-trigger" href="login">Salir</a>
               </li>
             @else
               <li class="dropdown nav-item">
