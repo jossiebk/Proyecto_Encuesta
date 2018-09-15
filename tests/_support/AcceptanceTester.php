@@ -107,8 +107,11 @@ class AcceptanceTester extends \Codeception\Actor
      * @When I press the button
      */
      public function iPressTheButton()
+     {
+         $this->amOnPage('/');
+     }
 
-     /*
+     /**
      * @Given I am on the login page
      */
      public function iAmOnTheLoginPage()
