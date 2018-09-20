@@ -105,5 +105,9 @@ class DatabaseSeeder extends Seeder
         //Llamadas a otros seeders
         $this->call(SchoolsDataSeeder::class);
 
+        //Insertando unidades academicas para las pruebas
+        DB::table('academic_units')->insert([
+             'name' => 'Tom Nader',
+        ]);
     }
 }
