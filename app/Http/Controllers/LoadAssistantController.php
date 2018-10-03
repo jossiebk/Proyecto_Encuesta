@@ -11,10 +11,14 @@ class LoadAssistantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('/assistants/LoadAssistant');    
+        $Assistant = Assistant::find($id);
+        return view('/assistants/LoadAssistant')->with(compact('Assistant'));
+          
     }
+
+
 
     /**
      * Show the form for creating a new resource.

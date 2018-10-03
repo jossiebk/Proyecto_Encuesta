@@ -211,4 +211,42 @@ class AcceptanceTester extends \Codeception\Actor
         $this->click('Guardar');
      }
 
+// BDD jossie - luis
+
+      /**
+     * @When I am on the assistant dashboard, assistant $:num1 it must exist
+     */
+     public function iAmOnTheAssistantDashboardAssistantItMustExist($num1)
+     {
+         $this->amOnPage("/AssistandDash/$num1");
+         $this->SeeResponseCodeIs(200);
+     }
+
+
+    /**
+     * @When i am on the assistant dashboard page
+     */
+     public function iAmOnTheAssistantDashboardPage()
+     {
+        $this->amOnPage("/AssistandDash/1");
+         $this->SeeResponseCodeIs(200);
+     }
+
+    /**
+     * @When I click the curriculum button
+     */
+     public function iClickTheCurriculumButton()
+     {
+        $this->click('Cargar');    
+     }         
+
+    /**
+     * @Then I should be on the resume page
+     */
+     public function iShouldBeOnTheResumePage()
+     {
+        $this->amOnPage("/LoadAssistant/1");
+         $this->SeeResponseCodeIs(200);   
+     }
+
 }
