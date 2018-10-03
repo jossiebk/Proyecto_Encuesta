@@ -97,3 +97,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/Top10AssistantPerAcademicUnit', 'Reports@AcademicUnit');
 //ruta para top generado
 Route::get('/Top10AssistantPerAcademicUnit/Top_Generado', 'Reports@Top10AssisPerAcademicUnit');
+//ruta para 
+Route::get('/LoadAssistant', 'LoadAssistantController@index');
