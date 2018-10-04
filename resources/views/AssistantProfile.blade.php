@@ -98,7 +98,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="{{ url('/teacher/dashboard/titles') }}">
+        <form method="POST" action="{{ url('/assistantProfile') }}">
           @csrf
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Id de catedratico:</label>
@@ -106,15 +106,27 @@
           </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Titulo academico 1:</label>
-            <input type="text" class="form-control" name="title1" required>
+            <input type="text" class="form-control" name="academic1" required>
           </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Titulo academico 2:</label>
-            <input type="text" class="form-control" name="title2">
+            <input type="text" class="form-control" name="academic2">
           </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Titulo academico 3:</label>
-            <input type="text" class="form-control" name="title3">
+            <input type="text" class="form-control" name="academic3">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Experiencia Laboral 1:</label>
+            <input type="text" class="form-control" name="work1" required>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Experiencia Laboral 2:</label>
+            <input type="text" class="form-control" name="work2">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Experiencia Laboral 3:</label>
+            <input type="text" class="form-control" name="work3">
           </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
