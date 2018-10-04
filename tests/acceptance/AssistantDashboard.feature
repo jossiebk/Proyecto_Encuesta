@@ -5,7 +5,7 @@ Feature: AssistantDashboard
 
 
  Scenario: See the assistant title page
- When I am on the assistant dashboard, assistant $1 it must exist
+ When I am on the assistant dashboard, assistant must exist
  Then I should see "dashboard de auxiliar"
 
  Scenario: Upload assistant resume

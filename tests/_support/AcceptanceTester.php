@@ -216,9 +216,9 @@ class AcceptanceTester extends \Codeception\Actor
       /**
      * @When I am on the assistant dashboard, assistant $:num1 it must exist
      */
-     public function iAmOnTheAssistantDashboardAssistantItMustExist($num1)
+     public function iAmOnTheAssistantDashboardAssistantItMustExist()
      {
-         $this->amOnPage("/AssistandDash/$num1");
+         $this->amOnPage("/AssistantDashboard/");
          $this->SeeResponseCodeIs(200);
      }
 
@@ -228,7 +228,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iAmOnTheAssistantDashboardPage()
      {
-        $this->amOnPage("/AssistandDash/1");
+        $this->amOnPage("/AssistantDashboard/");
          $this->SeeResponseCodeIs(200);
      }
 
