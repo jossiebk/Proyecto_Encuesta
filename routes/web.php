@@ -101,3 +101,5 @@ Route::get('/Top10AssistantPerAcademicUnit/Top_Generado', 'Reports@Top10AssisPer
 Route::get('/LoadAssistant/{id}', 'LoadAssistantController@index');
 //ruta para guardar datos de auxiliar
 Route::post('/LoadAssistant/save', 'LoadAssistantController@update');
+//ruta para el Dashboard del auxiliar
+Route::get('/AssistantDashboard','LoadAssistantController@showAssistantDashboard');
