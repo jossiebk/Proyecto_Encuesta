@@ -5,12 +5,12 @@ Feature: AssistantDashboard
 
 
  Scenario: See the assistant title page
- When I am on the assistant dashboard, assistant $1 it must exist
+ When i am on the assistant dashboard page
  Then I should see "dashboard de auxiliar"
 
  Scenario: Upload assistant resume
  When i am on the assistant dashboard page
  And I click the curriculum button
  Then I should be on the resume page
- And I should see "Cargar curriculum"
+ And I should see "CARGA AUXILIARES"
 
