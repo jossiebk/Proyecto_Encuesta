@@ -228,6 +228,10 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iAmOnTheAssistantDashboardPage()
      {
+        $this->amOnPage('/login');
+        $this->fillField('email', 'assistant1@mail.com');
+        $this->fillField('password', '123456');
+        $this->click('Submit');
         $this->amOnPage("/AssistantDashboard/");
          $this->SeeResponseCodeIs(200);
      }
@@ -237,7 +241,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iClickTheCurriculumButton()
      {
-        $this->click('Cargar');    
+        $this->click('Cargar Curriculum');    
      }         
 
     /**
