@@ -48,28 +48,42 @@ class AssistantController extends Controller
         return view('AssistantProfile')->with(compact('assistant'));
     }
 
-//Metodo que almacena/actualiza la informacion academica del auxiliar
-public function titles_works(Request $request){
-    $assistant = Assistant::find($request->input('id'));
-    if($assistant == null){
-        $alert = 'Alerta! No existe el auxiliar, por favor verifica tu informacion';
-        return back()->with(compact('alert'));
+    //Metodo que actualiza la informacion academica del auxiliar
+    public function title(Request $request){
+        $assistant = Assistant::find($request->input('id'));
+        if($assistant == null){
+            $alert = 'Alerta! No existe el auxiliar, por favor verifica tu informacion';
+            return back()->with(compact('alert'));
+        }
+
+        $assistant->academic_experience_1 = !empty($request->input('academic1')) ? $request->input('academic1') : $assistant->academic_experience_1; 
+        $assistant->academic_experience_2 = !empty($request->input('academic2')) ? $request->input('academic2') : $assistant->academic_experience_2; 
+        $assistant->academic_experience_3 = !empty($request->input('academic3')) ? $request->input('academic3') : $assistant->academic_experience_3;
+
+        $assistant->save();
+
+        $message = 'Informacion actualizada correctamente!';
+        return back()->with(compact('message')) ;
+        
     }
 
-    $assistant->academic_experience_1 = !empty($request->input('academic1')) ? $request->input('academic1') : $assistant->academic_experience_1; 
-    $assistant->academic_experience_2 = !empty($request->input('academic2')) ? $request->input('academic2') : $assistant->academic_experience_2; 
-    $assistant->academic_experience_3 = !empty($request->input('academic3')) ? $request->input('academic3') : $assistant->academic_experience_3;
+    //Metodo que actualiza la informacion laboral del auxiliar
+    public function work(Request $request){
+        $assistant = Assistant::find($request->input('id'));
+        if($assistant == null){
+            $alert = 'Alerta! No existe el auxiliar, por favor verifica tu informacion';
+            return back()->with(compact('alert'));
+        }
 
-    $assistant->work_experience_1 = !empty($request->input('work1')) ? $request->input('work1') : $assistant->work_experience_1; 
-    $assistant->work_experience_2 = !empty($request->input('work2')) ? $request->input('work2') : $assistant->work_experience_2; 
-    $assistant->work_experience_3 = !empty($request->input('work3')) ? $request->input('work3') : $assistant->work_experience_3;
+        $assistant->work_experience_1 = !empty($request->input('work1')) ? $request->input('work1') : $assistant->work_experience_1; 
+        $assistant->work_experience_2 = !empty($request->input('work2')) ? $request->input('work2') : $assistant->work_experience_2; 
+        $assistant->work_experience_3 = !empty($request->input('work3')) ? $request->input('work3') : $assistant->work_experience_3;
 
+        $assistant->save();
 
-    $assistant->save();
+        $message = 'Informacion actualizada correctamente!';
+        return back()->with(compact('message')) ;
 
-    $message = 'Informacion actualizada correctamente!';
-    return back()->with(compact('message')) ;
-
-}
+    }
 
 }

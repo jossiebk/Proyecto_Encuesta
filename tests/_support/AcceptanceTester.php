@@ -253,7 +253,7 @@ class AcceptanceTester extends \Codeception\Actor
          $this->SeeResponseCodeIs(200);   
      }
 
-         /**
+    /**
      * @When I am on the LoadAssistant page $:num1 it must exist
      */
      public function iAmOnTheLoadAssistantPageItMustExist($num1)
@@ -269,6 +269,53 @@ class AcceptanceTester extends \Codeception\Actor
      {
                 $this->click('Guardar');    
        //  throw new \Codeception\Exception\Incomplete("Step `I must be able to submit my information` is not defined");
+     }
+
+     /*BDD-Diego-Michi*/
+     /*BDD-201318633-201318570*/
+
+    /**
+     * @Given I am on my dashboard
+     */
+     public function iAmOnMyDashboard()
+     {
+        $this->amOnPage("/AssistantDashboard");
+     }
+
+    /**
+     * @When I click the update academic info
+     */
+     public function iClickTheUpdateAcademicInfo()
+     {
+        $this->click("Informacion Academica");
+     }
+
+    /**
+     * @Then I should see a modal
+     */
+     public function iShouldSeeAModal()
+     {
+        $this->see('Cancelar','#exampleModal');
+        $this->see('Guardar','#exampleModal');
+     }
+
+    /**
+     * @Then I should see :arg1 in the modal :arg2
+     */
+     public function iShouldSeeInTheModal($arg1, $arg2)
+     {
+        if($arg2=='Modal1')
+            $this->see($arg1, '#exampleModal');
+        else
+            $this->see($arg1, '#exampleModal2');
+     }
+
+    /**
+     * @When I click the update work experience
+     */
+     public function iClickTheUpdateWorkExperience()
+     {
+        $this->click("Informacion Laboral");
      }
 
 
