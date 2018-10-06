@@ -65,7 +65,8 @@ Route::post('/teacher/dashboard/reference', 'TeacherController@reference');
 // ruta para perfil del auxiliar
 Route::get('/assistantProfile/{id}', 'AssistantController@profile');
 
-Route::post('/assistantProfile', 'AssistantController@title_work');
+Route::post('/assistantProfile/academic', 'AssistantController@title');
+Route::post('/assistantProfile/work', 'AssistantController@work');
 
 Route::get('/AuxReview/{id}', 'AssistantController@reviewAux');
 
