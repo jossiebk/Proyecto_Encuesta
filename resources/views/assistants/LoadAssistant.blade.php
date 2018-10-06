@@ -26,7 +26,7 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong>Carga auxiliares</strong>
+              <strong>cargar curriculum</strong>
             </h1>
             
 
@@ -54,7 +54,7 @@
 
 
     <div class="content"> 
-     {!! Form::open(['url' => '/LoadAssistant/save', 'method' => 'post', 'class' => 'form-row align-items-center','onsubmit' => 'return confirm("Quieres enviar esta informacion?")']) !!}
+     {!! Form::open(['url' => '/LoadAssistant/save', 'method' => 'post', 'class' => 'form-row align-items-center']) !!}
     <div class="container" type="text" readonly>
     {!! Form::token('tokenL')!!}
 
@@ -126,9 +126,7 @@
     <br>
     {!!Form::textarea('references',null,array('class' => 'comentario_size'))!!}
     <br>
-    <br>
-
-      {!!Form::submit('Guardar', array('class'=>'btn btn-primary btn-lg btn-block'))!!}
+    <br>{!!Form::submit('Guardar', array('class'=>'btn btn-primary btn-lg btn-block'))!!}
     </div>
     {!! Form::close() !!}
 

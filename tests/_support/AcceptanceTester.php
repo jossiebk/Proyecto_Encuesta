@@ -249,4 +249,23 @@ class AcceptanceTester extends \Codeception\Actor
          $this->SeeResponseCodeIs(200);   
      }
 
+         /**
+     * @When I am on the LoadAssistant page $:num1 it must exist
+     */
+     public function iAmOnTheLoadAssistantPageItMustExist($num1)
+     {
+        $this->amOnPage("/LoadAssistant/1");
+         $this->SeeResponseCodeIs(200);   // throw new \Codeception\Exception\Incomplete("Step `I am on the LoadAssistant page $:num1 it must exist` is not defined");
+     }
+
+    /**
+     * @Then I must be able to submit my information
+     */
+     public function iMustBeAbleToSubmitMyInformation()
+     {
+                $this->click('Guardar');    
+       //  throw new \Codeception\Exception\Incomplete("Step `I must be able to submit my information` is not defined");
+     }
+
+
 }
