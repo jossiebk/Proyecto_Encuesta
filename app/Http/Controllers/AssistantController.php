@@ -86,4 +86,19 @@ class AssistantController extends Controller
 
     }
 
+    //metodo para obtener los cursos de un auxiliar
+    public function course_assistant_by_id_assistant(Request $request, $id){
+
+    	$consulta = \DB::table('assistant_course as ac')
+    	->join('courses as c', 'ac.id_course', '=', 'c.id')
+    	->select('c.id as ID', 'c.name as CURSO')
+    	->orderBy('c.id', 'asc')
+    	->where('ac.id_assistant','=',$id)
+    	->get();
+
+    	return view('/assistants/AssistantCourse', [
+    		'consulta' => $consulta
+    		]);
+    }
+
 }
