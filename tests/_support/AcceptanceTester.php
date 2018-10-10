@@ -319,4 +319,15 @@ class AcceptanceTester extends \Codeception\Actor
      }
 
 
+         /**
+     * @When I am on the AssistantCourse page $:num1 it must exist
+     */
+     public function iAmOnTheAssistantCoursePageItMustExist($num1)
+     {
+        $this->amOnPage("/AssistantProfileCourse/$num1");
+         $this->SeeResponseCodeIs(200);
+         //throw new \Codeception\Exception\Incomplete("Step `I am on the AssistantCourse page $:num1 it must exist` is not defined");
+     }
+
+
 }
