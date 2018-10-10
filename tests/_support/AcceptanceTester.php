@@ -329,5 +329,29 @@ class AcceptanceTester extends \Codeception\Actor
          //throw new \Codeception\Exception\Incomplete("Step `I am on the AssistantCourse page $:num1 it must exist` is not defined");
      }
 
+         /**
+     * @When i am on the administrative dashboard page
+     */
+     public function iAmOnTheAdministrativeDashboardPage()
+     {
+
+     }
+
+    /**
+     * @When i click the :arg1 button
+     */
+     public function iClickTheButton($arg1)
+     {
+
+     }
+
+    /**
+     * @Given I am on the assistant dashboard
+     */
+     public function iAmOnTheAssistantDashboard()
+     {
+
+     }
+
 
 }
