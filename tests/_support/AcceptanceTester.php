@@ -334,7 +334,8 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iAmOnTheAdministrativeDashboardPage()
      {
-
+        $this->amOnPage("/AdministrativeDashboard");
+        $this->SeeResponseCodeIs(200);
      }
 
     /**
@@ -342,15 +343,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iClickTheButton($arg1)
      {
-
-     }
-
-    /**
-     * @Given I am on the assistant dashboard
-     */
-     public function iAmOnTheAssistantDashboard()
-     {
-
+        $this->click($arg1);
      }
 
 
