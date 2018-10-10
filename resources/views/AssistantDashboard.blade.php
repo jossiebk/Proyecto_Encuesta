@@ -75,6 +75,15 @@
             </div>
           </div>
 
+          <div class="col-lg-4 col-md-4 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <a data-toggle="modal" data-target="#ModalEvaluaciones">
+                <i class="fa fa-4x fa-align-justify text-secondary mb-3 sr-icons"></i>
+                <p class="text-muted mb-0">Mis Evaluaciones</p>
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
   </section>
@@ -182,6 +191,94 @@
             <button type="submit" class="btn btn-primary">Guardar</button>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Evaluaciones -->
+<div class="modal fade" id="ModalEvaluaciones" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Resultado de sus evaluaciones</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+            <div class="placeholder">
+              <span class="small">Puntualidad: 5</span>
+            </div> 
+
+            <div class="overlay" >           
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+                        
+            </div>
+
+            <br>
+
+            <div class="placeholder">
+              <span class="small">Dominio de los temas: 2.5</span>
+            </div> 
+
+            <div class="overlay" >           
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+            </div>
+
+            <br>
+
+            <div class="placeholder">
+              <span class="small">Presentacion: 3</span>
+            </div> 
+
+            <div class="overlay" >           
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+
+            <br>
+
+            <div class="placeholder">
+              <span class="small">Entrega de notas: 3</span>
+            </div> 
+
+            <div class="overlay" >           
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+
+            <br>
+
+            <div class="placeholder">
+              <span class="small">Asistencia: 3</span>
+            </div> 
+
+            <div class="overlay" >           
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+        
+      </div>
+
+      <div class="modal-body">
+        <div class="service-box"> 
+           <p class="text-muted mb-0">Evaluaciones: 5</p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
       </div>
     </div>
   </div>

@@ -346,5 +346,24 @@ class AcceptanceTester extends \Codeception\Actor
         $this->click($arg1);
      }
 
+     /*BDD - Jossie y Diego*/
+
+     /**
+     * @Given I am on the assistant dashboard
+     */
+     public function iAmOnTheAssistantDashboard()
+     {
+        $this->amOnPage('/AssistantDashboard');
+     }
+
+    /**
+     * @When I click the evaluation results button
+     */
+     public function iClickTheEvaluationResultsButton()
+     {
+        $this->click("Mis Evaluaciones");
+     }
+
+
 
 }
