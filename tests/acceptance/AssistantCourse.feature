@@ -5,3 +5,8 @@ Feature: AssistantCourse
  Scenario: See the AssistantCourse title page
  When I am on the AssistantCourse page $1 it must exist
  Then I should see "Los cursos son:"
+
+
+ Scenario: See the AssistantCourse title page
+ When I am on the AssistantCourse page $9876 it must exist
+ Then I should see "No se encontró ningún curso"
