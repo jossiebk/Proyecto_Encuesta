@@ -73,3 +73,5 @@ Route::post('/LoadAssistant/save', 'LoadAssistantController@update');
 Route::get('/AssistantDashboard','LoadAssistantController@showAssistantDashboard');
 // ruta para obtener cursos de un auxiliar
 Route::get('/AssistantProfileCourse/{id}', 'AssistantController@course_assistant_by_id_assistant');
+// ruta para el dashboard de administracion
+Route::get('/AdministrativeDashboard','AdministrativeController@index');
