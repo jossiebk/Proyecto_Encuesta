@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Assistant;
+use App\Review;
 
 class LoadAssistantController extends Controller
 {
@@ -111,8 +112,50 @@ class LoadAssistantController extends Controller
      */
     public function showAssistantDashboard()
     {
-        
-        return view('/AssistantDashboard');
+         $rating = $this->getAverageOfAllReviewsAssistant();
+        return view('/AssistantDashboard')->with(compact('rating'));
           
     }
+
+//Metoto para obtener las evaluaciones de un auxiliar
+    public function getAssistantReviews($id_assistant)
+    {
+        $assistant = Assistant::find($id_assistant);
+        $reviews = Review::where('id_user_evaluated', $assistant->user->id)->get();
+        return $reviews;
+    }
+
+
+//Metodo para obtener el promedio de todas las evaluaciones de un catedratico
+    public function getAverageOfAllReviewsAssistant()
+    {
+        $reviews = $this->getAssistantReviews(2);
+        $puntuality = 0;
+        $knowledge = 0;
+        $presentation = 0;
+        $notes = 0;
+        $assistance = 0;
+        foreach($reviews as $review)
+        {
+            $puntuality = $puntuality + $review->puntuality;
+            $knowledge = $knowledge + $review->knowledge;
+            $presentation = $presentation + $review->presentation;
+            $notes = $notes + $review->presentation;
+            $assistance = $assistance + $review->assistance;
+        }
+
+        $totalReviews = $reviews->count();
+
+        $rating = [
+            "puntuality" => Round($puntuality/$totalReviews, 2),
+            "knowledge" => Round($knowledge/$totalReviews, 2),
+            "presentation" => Round($presentation/$totalReviews, 2),
+            "notes" => Round($notes/$totalReviews, 2),
+            "assistance" => Round($assistance/$totalReviews, 2),
+            "reviewsCount" => $reviews->count(),
+        ];
+
+        return $rating;
+    }
+
 }

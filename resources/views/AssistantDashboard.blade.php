@@ -196,12 +196,12 @@
   </div>
 </div>
 
-<!-- Modal Evaluaciones -->
+
 <div class="modal fade" id="ModalEvaluaciones" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Resultado de sus evaluaciones</h5>
+        <h5 class="modal-title" id="ModalEvaluaciones">Resultado de sus evaluaciones</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -209,71 +209,93 @@
       <div class="modal-body">
         
             <div class="placeholder">
-              <span class="small">Puntualidad: 5</span>
+              <span class="small">Puntualidad: {{ $rating['puntuality'] }}</span>
             </div> 
 
             <div class="overlay" >           
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-                        
+                @while($rating['puntuality'] > 0)
+                    @if($rating['puntuality'] >= 1)
+                        <i class="fas fa-star"></i>
+                    @else
+                        <i class="fas fa-star-half"></i>
+                    @endif
+                    @php $rating['puntuality']--; @endphp
+                @endwhile
             </div>
 
             <br>
 
             <div class="placeholder">
-              <span class="small">Dominio de los temas: 2.5</span>
+              <span class="small">Dominio de los temas: {{ $rating['knowledge'] }}</span>
             </div> 
 
             <div class="overlay" >           
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half"></i>
+                @while($rating['knowledge'] > 0)
+                    @if($rating['knowledge'] >= 1)
+                        <i class="fas fa-star"></i>
+                    @else
+                        <i class="fas fa-star-half"></i>
+                    @endif
+                    @php $rating['knowledge']--; @endphp
+                @endwhile
             </div>
 
             <br>
 
             <div class="placeholder">
-              <span class="small">Presentacion: 3</span>
+              <span class="small">Presentacion: {{ $rating['presentation'] }}</span>
             </div> 
 
             <div class="overlay" >           
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+                @while($rating['presentation'] > 0)
+                    @if($rating['presentation'] >= 1)
+                        <i class="fas fa-star"></i>
+                    @else
+                        <i class="fas fa-star-half"></i>
+                    @endif
+                    @php $rating['presentation']--; @endphp
+                @endwhile
             </div>
 
             <br>
 
             <div class="placeholder">
-              <span class="small">Entrega de notas: 3</span>
+              <span class="small">Entrega de notas: {{ $rating['notes'] }}</span>
             </div> 
 
             <div class="overlay" >           
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+                @while($rating['notes'] > 0)
+                    @if($rating['notes'] >= 1)
+                        <i class="fas fa-star"></i>
+                    @else
+                        <i class="fas fa-star-half"></i>
+                    @endif
+                    @php $rating['notes']--; @endphp
+                @endwhile
             </div>
 
             <br>
 
             <div class="placeholder">
-              <span class="small">Asistencia: 3</span>
+              <span class="small">Asistencia: {{ $rating['assistance'] }}</span>
             </div> 
 
             <div class="overlay" >           
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+                @while($rating['assistance'] > 0)
+                    @if($rating['assistance'] >= 1)
+                        <i class="fas fa-star"></i>
+                    @else
+                        <i class="fas fa-star-half"></i>
+                    @endif
+                    @php $rating['assistance']--; @endphp
+                @endwhile
             </div>
         
       </div>
 
       <div class="modal-body">
         <div class="service-box"> 
-           <p class="text-muted mb-0">Evaluaciones: 5</p>
+           <p class="text-muted mb-0">Evaluaciones: {{ $rating['reviewsCount'] }}</p>
         </div>
       </div>
 
@@ -282,7 +304,9 @@
       </div>
     </div>
   </div>
-</div>
+</div>  
+
+
 @include('blocks.search')
 
 @endsection
