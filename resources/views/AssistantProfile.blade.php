@@ -72,7 +72,7 @@
 
 
   <div class="col-sm-4"><button type="button" class="btn btn-info btn-block"><a  href="{{url('AuxReview',['id'=>$assistant->id]) }}";>Opinar</a></button></div>
-  <div class="col-sm-4"><button type="button" class="btn btn-warning btn-block">Cursos</button></div>
+  <div class="col-sm-4"><button type="button" class="btn btn-warning btn-block"><a href="{{ url('AssistantProfileCourse/'. $assistant->id) }}" >Cursos</a></button></div>
 
 </div>
 <br>
