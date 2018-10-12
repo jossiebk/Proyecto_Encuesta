@@ -9,7 +9,7 @@ Feature: AdministrativeDashboard
 
   Scenario: see the course upload button
   When i am on the administrative dashboard page
-  And i click the "carga de cursos" button
+  And i click the "cursos" button
   Then I should see "Ingrese informacion del curso"
 
   Scenario: see the assistant upload button
