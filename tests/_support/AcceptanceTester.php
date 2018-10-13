@@ -339,7 +339,7 @@ class AcceptanceTester extends \Codeception\Actor
      }
 
     /**
-     * @When i click the :arg1 button
+     * @When I click the :arg1 button
      */
      public function iClickTheButton($arg1)
      {

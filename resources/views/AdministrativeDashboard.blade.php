@@ -18,78 +18,91 @@
 	<section id="services">
       <div class="container">
         <div class="row">
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-address-card text-primary mb-3 sr-icons">ti
-              </i>
-                 <h3 class="mb-3 btn btn-outline-dark" data-toggle="modal" data-target="#Pestaña1">carga de cursos</h3>
-                 <button id="carga de cursos" data-toggle="modal" data-target="#Pestaña1">cursos</button>
-              <p class="text-muted mb-0"></p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-briefcase text-primary mb-3 sr-icons"></i>
-    			<h3 class="mb-3 btn btn-outline-dark" data-toggle="modal" data-target="#Pestaña2">cargar auxiliar</h3>
 
-              <p class="text-muted mb-0"></p>
+         <div class="col-lg-4 col-md-4 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <a href="#" data-toggle="modal" data-target="#Pestaña1">
+                <i class="fa fa-4x fa-file-text text-primary mb-3 sr-icons"></i>
+                <p class="mb-3 btn btn-outline-dark">agregar curso</p>
+              </a>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-balance-scale text-primary mb-3 sr-icons"></i>
- 			   <h3 class="mb-3 btn btn-outline-dark" data-toggle="modal" data-target="#Pestaña3">cargar catedratico</h3>
-              <p class="text-muted mb-0"></p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-user text-primary mb-3 sr-icons"></i>
-   				 <h3 class="mb-3 btn btn-outline-dark" data-toggle="modal" data-target="#Pestaña4">cargar estudiante</h3>
-              <p class="text-muted mb-0"></p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-user text-primary mb-3 sr-icons"></i>
-   				     <h3 class="mb-3 btn btn-outline-dark" data-toggle="modal" data-target="#Pestaña5">modificar curso</h3>
 
-              <p class="text-muted mb-0"></p>
+          <div class="col-lg-4 col-md-4 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <a href="#" data-toggle="modal" data-target="#Pestaña2">
+                <i class="fa fa-4x fa-user-plus text-primary mb-3 sr-icons"></i>
+                <p class="mb-3 btn btn-outline-dark">agregar auxiliar</p>
+              </a>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-user text-primary mb-3 sr-icons"></i>
-   				     <h3 class="mb-3 btn btn-outline-dark" data-toggle="modal" data-target="#Pestaña6">modificar auxiliar</h3>
 
-              <p class="text-muted mb-0"></p>
+          <div class="col-lg-4 col-md-4 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <a href="#" data-toggle="modal" data-target="#Pestaña3">
+                <i class="fa fa-4x fa-graduation-cap text-primary mb-3 sr-icons"></i>
+                <p class="mb-3 btn btn-outline-dark">agregar catedratico</p>
+              </a>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-user text-primary mb-3 sr-icons"></i>
-   				      <h3 class="mb-3 btn btn-outline-dark" data-toggle="modal" data-target="#Pestaña7">eliminar curso</h3>
-
-              <p class="text-muted mb-0"></p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-user text-primary mb-3 sr-icons"></i>
-                <h3 class="mb-3 btn btn-outline-dark" data-toggle="modal" data-target="#Pestaña8">eliminar catedratico</h3>
 
 
-              <p class="text-muted mb-0"></p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
+          <div class="col-lg-4 col-md-4 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-user text-primary mb-3 sr-icons"></i>
-                 <h3 class="mb-3 btn btn-outline-dark" data-toggle="modal" data-target="#Pestaña9">eliminar auxiliar</h3>
-
-              <p class="text-muted mb-0"></p>
+              <a href="#" data-toggle="modal" data-target="#Pestaña4">
+                <i class="fa fa-4x fa-child text-primary mb-3 sr-icons"></i>
+                <p class="mb-3 btn btn-outline-dark">agregar estudiante</p>
+              </a>
             </div>
           </div>
+
+          <div class="col-lg-4 col-md-4 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <a href="#" data-toggle="modal" data-target="#Pestaña5">
+                <i class="fa fa-4x fa-edit text-primary mb-3 sr-icons"></i>
+                <p class="mb-3 btn btn-outline-dark">modificar curso</p>
+              </a>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-4 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <a href="#" data-toggle="modal" data-target="#Pestaña6">
+                <i class="fa fa-4x fa-id-card text-primary mb-3 sr-icons"></i>
+                <p class="mb-3 btn btn-outline-dark">modificar auxiliar</p>
+              </a>
+            </div>
+          </div>
+         
+          <div class="col-lg-4 col-md-4 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <a href="#" data-toggle="modal" data-target="#Pestaña7">
+                <i class="fa fa-4x fa-remove text-primary mb-3 sr-icons"></i>
+                <p class="mb-3 btn btn-outline-dark">eliminar curso</p>
+              </a>
+            </div>
+          </div>
+
+         <div class="col-lg-4 col-md-4 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <a href="#" data-toggle="modal" data-target="#Pestaña8">
+                <i class="fa fa-4x fa-user-times text-primary mb-3 sr-icons"></i>
+                <p class="mb-3 btn btn-outline-dark">eliminar catedratico</p>
+              </a>
+            </div>
+          </div>
+
+         <div class="col-lg-4 col-md-4 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <a href="#" data-toggle="modal" data-target="#Pestaña9">
+                <i class="fa fa-4x fa-gavel text-primary mb-3 sr-icons"></i>
+                <p class="mb-3 btn btn-outline-dark">eliminar auxiliar</p>
+              </a>
+            </div>
+          </div>
+
+          
         </div>
       </div>
     </section>
