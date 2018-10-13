@@ -12,5 +12,5 @@ Feature: AssistantDashboard
  When i am on the assistant dashboard page
  And I click the curriculum button
  Then I should be on the resume page
- And I should see "CARGA AUXILIARES"
+ And I should see "CARGAR CURRICULUM"
 
