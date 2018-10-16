@@ -141,9 +141,34 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModa3Label">Ingrese informacion para el catedratico</h5>
+        
+    
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+
+        
+    
+      </div>
+      <div class="col-lg-4 col-md-6 textz-center">
+        <p> Nombre &nbsp; &nbsp;&nbsp;&nbsp;   <input id="name" type="text" name="name" /></p>
+        <p> Correo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input id="email" type="text" name="email" /></p> 
+        <p> Contraseña &nbsp;<input id="pass" type="text" name="pass" /></p> 
+        <p> Cumpleaños <input id="birthday" type="text" name="birthday" /></p> 
+        <p> Descripción &nbsp;<input id="des" type="text" name="des" /></p>
+        <p> Titulo 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="tittle1" type="text" name="tittle1" /></p>
+        <p> Titulo 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="tittle2" type="text" name="tittle2" /></p>
+        <p> Titulo 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input id="tittle3" type="text" name="tittle3" /></p>
+        <p> Experiencia 1 <input id="ex1" type="text" name="ex1" /></p>
+        <p> Experiencia 2 <input id="ex2" type="text" name="ex2" /></p>
+        <p> Experiencia 3 <input id="ex3" type="text" name="ex3" /></p>
+        <p> Referencia <input id="ref" type="text" name="ref" /></p>
+      </div>
+
+       <div class="col-sm-4">
+        <a href="" 
+          class="btn btn-warning btn-block" 
+          role="button" >Guardar</a>
       </div>
     </div>
   </div>
