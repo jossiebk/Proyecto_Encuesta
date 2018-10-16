@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\School;
+use App\Faculty;
+use App\AcademicUnit;
 
 class AdministrativeController extends Controller
 {
@@ -13,8 +16,11 @@ class AdministrativeController extends Controller
      */
     public function index()
     {
-        //
-        return view('AdministrativeDashboard');
+        $schools = School::all();
+        $faculties = Faculty::all();
+        $academicUnits = AcademicUnit::all();
+        return view('AdministrativeDashboard')->with(compact('schools', 'faculties', 'academicUnits'));
+
     }
 
     /**

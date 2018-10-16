@@ -134,6 +134,40 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+          <div class="col-lg-4 col-md-6 textz-center">
+            <p> Nombre &nbsp; &nbsp;&nbsp;&nbsp;   <input id="name" type="text" name="name" /></p>
+            <p> Codigo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input id="code" type="text" name="code" /></p> 
+            <p> Descripción &nbsp;<input id="des" type="text" name="des" /></p>
+            <p> Escuela: &nbsp;</p>
+            <select class="form-control form-control-lg" name="school_name">
+            @forelse($schools as $esc)
+            <option>{{ $esc->name}} </option>
+             @empty
+              <option>Escuelas no encontradas</option>
+            @endforelse
+            </select>
+            <p> Facultad: &nbsp;</p>
+            <select class="form-control form-control-lg" name="faculties_name">
+            @forelse($faculties as $esc)
+            <option>{{ $esc->name}} </option>
+             @empty
+              <option>Facultades no encontradas</option>
+            @endforelse
+            </select>
+            <p> Unidad Academica: &nbsp;</p>
+            <select class="form-control form-control-lg" name="academicUnits_name">
+            @forelse($academicUnits as $esc)
+            <option>{{ $esc->name}} </option>
+             @empty
+              <option>Unidad academida no encontrada</option>
+            @endforelse
+            </select>
+          <br>
+          <br>
+          <input type="submit" class="btn btn-success" name="Guardar">
+
+          </div>
+          
     </div>
   </div>
 </div>
@@ -225,6 +259,7 @@
     </div>
   </div>
 </div>
+</div>
 
     <!-- Modal Agragar curso -->
 <div class="modal fade" id="Pestaña3" tabindex="-1" role="dialog" aria-labelledby="exampleModa3Label" aria-hidden="true">
@@ -237,8 +272,6 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-
-        
     
       </div>
       <div class="col-lg-4 col-md-6 textz-center">
