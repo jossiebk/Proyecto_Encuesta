@@ -102,5 +102,7 @@ class AssistantController extends Controller
     }
 
 
-
+    public function saveAssistantToDB(Request $request){
+        
+    }
 }
