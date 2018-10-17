@@ -21,7 +21,8 @@ class AdministrativeController extends Controller
         $schools = School::all();
         $faculties = Faculty::all();
         $academicUnits = AcademicUnit::all();
-        return view('AdministrativeDashboard')->with(compact('schools', 'faculties', 'academicUnits'));
+        $users = User::all();
+        return view('AdministrativeDashboard')->with(compact('schools', 'faculties', 'academicUnits','users'));
 
     }
 
