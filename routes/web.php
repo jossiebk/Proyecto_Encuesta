@@ -78,3 +78,6 @@ Route::get('/AdministrativeDashboard','AdministrativeController@index');
 
 Route::post('/AdministrativeDashboard','AdministrativeController@TeacherStore');
 
+//ruta utilizada para la carga de cursos en el dashboard administrativo
+Route::post('/AdministrativeDashboard/courses', 'AdministrativeController@courses');
+

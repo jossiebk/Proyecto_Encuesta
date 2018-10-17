@@ -9,6 +9,8 @@ use App\AcademicUnit;
 use App\User;
 use App\Teacher;
 
+use App\Course;
+
 class AdministrativeController extends Controller
 {
     /**
@@ -90,6 +92,7 @@ class AdministrativeController extends Controller
     {
         //
     }
+
      /**
     * @param \Illuminate\Http\Request $request
     * @return \Illuminate\Http\Response
@@ -118,6 +121,21 @@ class AdministrativeController extends Controller
         $q->image="https://lorempixel.com/640/480";
         $q->save();
         return redirect('/AdministrativeDashboard');
+
+
+    public function courses(Request $request)
+    {
+        $course = new Course();
+        $course->name = $request->input('name');
+        $course->code = $request->input('code');
+        $course->description = $request->input('des');
+        $course->id_faculty = $request->input('faculties_id');
+        $course->id_school = $request->input('school_id');
+        $course->id_academic_unit = $request->input('academicUnits_ids');
+        $course->save();
+        $message = "Curso registrado correctamente";
+        return back()->with(compact('message'));
+
     }
 }
 
