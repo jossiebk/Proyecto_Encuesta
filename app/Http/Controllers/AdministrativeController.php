@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\School;
 use App\Faculty;
 use App\AcademicUnit;
+use App\User;
+use App\Teacher;
 
 class AdministrativeController extends Controller
 {
@@ -88,4 +90,34 @@ class AdministrativeController extends Controller
     {
         //
     }
+     /**
+    * @param \Illuminate\Http\Request $request
+    * @return \Illuminate\Http\Response
+    */
+    public function TeacherStore(Request $request){
+        $r=new User();
+        
+        //datos que van a user
+        $r->name=$request->input('name');
+        $r->email=$request->input('email');
+        $r->password=$request->input('pass');
+        $r->save();
+        $user1=$r::where('email',$request->input('email'))->first();
+        //Datos que van a teacher
+        $q=new Teacher();
+        $q->birthdate=$request->input('birthday');
+        $q->personal_description=$request->input('des');
+        $q->academic_title_1=$request->input('tittle1');
+        $q->academic_title_2=$request->input('tittle2');
+        $q->academic_title_3=$request->input('tittle3');
+        $q->work_experience_1=$request->input('ex1');
+        $q->work_experience_1=$request->input('ex2');
+        $q->work_experience_1=$request->input('ex3');
+        $q->references=$request->input('ref');
+        $q->id_user=$user1->id;
+        $q->image="https://lorempixel.com/640/480";
+        $q->save();
+        return redirect('/AdministrativeDashboard');
+    }
 }
+

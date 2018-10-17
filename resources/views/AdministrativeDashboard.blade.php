@@ -262,7 +262,10 @@
 </div>
 
     <!-- Modal Agragar curso -->
+    <form method="post" action="{{ url('/AdministrativeDashboard') }}">
+    @csrf
 <div class="modal fade" id="Pestaña3" tabindex="-1" role="dialog" aria-labelledby="exampleModa3Label" aria-hidden="true">
+  
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -290,14 +293,13 @@
       </div>
 
        <div class="col-sm-4">
-        <a href="" 
-          class="btn btn-warning btn-block" 
-          role="button" >Guardar</a>
+        <button>Guardate verga</button>
       </div>
     </div>
   </div>
-</div>
 
+</div>
+</form>
     <!-- Modal Agragar curso -->
 <div class="modal fade" id="Pestaña4" tabindex="-1" role="dialog" aria-labelledby="exampleModa4Label" aria-hidden="true">
   <div class="modal-dialog" role="document">
