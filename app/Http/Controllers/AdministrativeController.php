@@ -122,7 +122,7 @@ class AdministrativeController extends Controller
         $q->image="https://lorempixel.com/640/480";
         $q->save();
         return redirect('/AdministrativeDashboard');
-
+    }
 
     public function courses(Request $request)
     {
