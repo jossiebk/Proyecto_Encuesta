@@ -196,7 +196,7 @@
         </button>
          </div>
 
-     {!! Form::open(['url' => '/LoadAssistant/save', 'method' => 'post', 'class' => 'form-row align-items-center']) !!}
+     {!! Form::open(['url' => '/AssistantToDB', 'method' => 'post', 'class' => 'form-row align-items-center']) !!}
     <div class="container" type="text" readonly>
     {!! Form::token('tokenL')!!}
 
@@ -266,6 +266,23 @@
     <br>
     {!!Form::textarea('references',null,array('class' => 'comentario_size'))!!}
     <br>
+    <br>
+    {!!Form::label('L12', 'ID de Usuario')!!}
+    <br>
+    <select class="form-control form-control-lg" name="user_id">
+      @if($users !=null)
+      @forelse($users as $user)
+            @if($user->name != null )
+            
+        <option>{{ $user->id}} </option>
+            @endif
+             @empty
+        <option>Usuarios no encontrados</option>>
+            @endforelse
+      </select>
+      @endif 
+
+
     <br>{!!Form::submit('Guardar', array('class'=>'btn btn-primary btn-lg btn-block'))!!}
     {!! Form::close() !!}
 

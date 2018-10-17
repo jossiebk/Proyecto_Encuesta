@@ -77,6 +77,8 @@ Route::get('/AssistantProfileCourse/{id}', 'AssistantController@course_assistant
 Route::get('/AdministrativeDashboard','AdministrativeController@index');
 
 Route::post('/AdministrativeDashboard','AdministrativeController@TeacherStore');
+//ruta para almacenar al auxiliar desde el dashboard administrativo
+Route::post('/AssistantToDB', 'AssistantController@saveAssistantToDB');
 
 //ruta utilizada para la carga de cursos en el dashboard administrativo
 Route::post('/AdministrativeDashboard/courses', 'AdministrativeController@courses');
