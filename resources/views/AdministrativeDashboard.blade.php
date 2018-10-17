@@ -29,7 +29,13 @@
 	<div class="row align-items-center justify-content-center">
           <h1 style="color:white;" class="display-3">Dashboard administrativo</h1>
       </div>
-
+      <div class="container" >
+        @if(session('message'))
+          <div class="alert alert-secondary" role="alert">
+            {{ session('message') }}
+          </div>
+        @endif
+      </div>
 </div>
 
 	<section id="services">
@@ -134,40 +140,47 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-          <div class="col-lg-4 col-md-6 textz-center">
-            <p> Nombre &nbsp; &nbsp;&nbsp;&nbsp;   <input id="name" type="text" name="name" /></p>
-            <p> Codigo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input id="code" type="text" name="code" /></p> 
-            <p> Descripción &nbsp;<input id="des" type="text" name="des" /></p>
-            <p> Escuela: &nbsp;</p>
-            <select class="form-control form-control-lg" name="school_name">
-            @forelse($schools as $esc)
-            <option>{{ $esc->name}} </option>
-             @empty
-              <option>Escuelas no encontradas</option>
-            @endforelse
-            </select>
-            <p> Facultad: &nbsp;</p>
-            <select class="form-control form-control-lg" name="faculties_name">
-            @forelse($faculties as $esc)
-            <option>{{ $esc->name}} </option>
-             @empty
-              <option>Facultades no encontradas</option>
-            @endforelse
-            </select>
-            <p> Unidad Academica: &nbsp;</p>
-            <select class="form-control form-control-lg" name="academicUnits_name">
-            @forelse($academicUnits as $esc)
-            <option>{{ $esc->name}} </option>
-             @empty
-              <option>Unidad academida no encontrada</option>
-            @endforelse
-            </select>
-          <br>
-          <br>
-          <input type="submit" class="btn btn-success" name="Guardar">
+          <form method="post" action="{{ url('/AdministrativeDashboard/courses') }}">
+            @csrf
+            <div class="col-sm-8 col-md-6 textz-center">
+              <p> Nombre &nbsp; &nbsp;&nbsp;&nbsp;   <input id="name" type="text" name="name" class="form-control" /></p> 
+              <p> Codigo &nbsp;<input id="code" type="text" name="code" class="form-control"/></p>
+              <p> Descripción &nbsp;<input id="des" type="text" name="des" class="form-control"/></p>
+              <p> Escuela: &nbsp;</p>
+              
+              <select class="form-control form-control-lg" name="school_id">
+              @forelse($schools as $esc)
+                <option value="{{ $esc->id }}">{{ $esc->name}} </option>
+              @empty
+                <option>Escuelas no encontradas</option>
+              @endforelse
 
-          </div>
-          
+              </select>
+              <p> Facultad: &nbsp;</p>
+              <select class="form-control form-control-lg" name="faculties_id" >
+              @forelse($faculties as $esc)
+                <option value="{{ $esc->id }}">{{ $esc->name}} </option>
+              @empty
+                <option>Facultades no encontradas</option>
+              @endforelse
+              
+              </select>
+              <p> Unidad Academica: &nbsp;</p>
+              <select class="form-control form-control-lg" name="academicUnits_ids">
+              @forelse($academicUnits as $esc)
+                <option value="{{ $esc->id }}">{{ $esc->name}} </option>
+              @empty
+                <option>Unidad academida no encontrada</option>
+              @endforelse
+              </select>
+              <br>
+              <br>
+              <input type="submit" class="btn btn-success" name="Guardar">
+              <br>
+              <br>
+
+            </div>
+          </form>
     </div>
   </div>
 </div>

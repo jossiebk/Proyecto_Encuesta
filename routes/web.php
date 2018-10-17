@@ -75,3 +75,5 @@ Route::get('/AssistantDashboard','LoadAssistantController@showAssistantDashboard
 Route::get('/AssistantProfileCourse/{id}', 'AssistantController@course_assistant_by_id_assistant');
 // ruta para el dashboard de administracion
 Route::get('/AdministrativeDashboard','AdministrativeController@index');
+//ruta utilizada para la carga de cursos en el dashboard administrativo
+Route::post('/AdministrativeDashboard/courses', 'AdministrativeController@courses');
