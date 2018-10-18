@@ -323,7 +323,7 @@
       </div>
 
        <div class="col-sm-4">
-        <button>Guardate verga</button>
+        <button>Guardar</button>
       </div>
     </div>
   </div>
