@@ -365,5 +365,15 @@ class AcceptanceTester extends \Codeception\Actor
      }
 
 
+      /**
+     * @When user_id has selected $:num1
+     */
+     public function user_idHasSelected($num1)
+     {   
 
+         $id= (int)($num1);
+         $this->selectOption('form select[name=user_id]', $id);
+     }
+   
+     
 }
